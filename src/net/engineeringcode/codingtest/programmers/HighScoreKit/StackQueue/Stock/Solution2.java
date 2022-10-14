@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ½ºÅÃ/Å¥ > ÁÖ½Ä°¡°İ
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ìŠ¤íƒ/í > ì£¼ì‹ê°€ê²©
 	 * https://programmers.co.kr/learn/courses/30/lessons/42584
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 */
 
 	 public int[] solution(int[] prices) {

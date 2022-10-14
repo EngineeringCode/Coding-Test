@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ½ºÅÃ/Å¥ > ´Ù¸®¸¦ Áö³ª´Â Æ®·°
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ìŠ¤íƒ/í > ë‹¤ë¦¬ë¥¼ ì§€ë‚˜ëŠ” íŠ¸ëŸ­
 	 * https://programmers.co.kr/learn/courses/30/lessons/42583
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ´ë±â ÁßÀÎ Æ®·° ¸ñ·Ï°ú ´Ş¸®°í ÀÖ´Â Æ®·° ¸ñ·ÏÀ» Å¥·Î °ü¸®ÇÏ¿© ÇØ°áÇÏ¿´´Ù.
-	 * ¹®Á¦¿¡ ¸í½ÃµÇ¾î ÀÖÁö ¾ÊÁö¸¸ ÀÔÃâ·Â ¿¹¿Í ¼³¸íÀ¸·Î Ãß·ĞÇÏ¸é Æ®·°Àº ÃÊ´ç 1ÀÇ °Å¸®¸¦ ÀÌµ¿ÇÑ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ëŒ€ê¸° ì¤‘ì¸ íŠ¸ëŸ­ ëª©ë¡ê³¼ ë‹¬ë¦¬ê³  ìˆëŠ” íŠ¸ëŸ­ ëª©ë¡ì„ íë¡œ ê´€ë¦¬í•˜ì—¬ í•´ê²°í•˜ì˜€ë‹¤.
+	 * ë¬¸ì œì— ëª…ì‹œë˜ì–´ ìˆì§€ ì•Šì§€ë§Œ ì…ì¶œë ¥ ì˜ˆì™€ ì„¤ëª…ìœ¼ë¡œ ì¶”ë¡ í•˜ë©´ íŠ¸ëŸ­ì€ ì´ˆë‹¹ 1ì˜ ê±°ë¦¬ë¥¼ ì´ë™í•œë‹¤.
 	 */
 	
 	LinkedList<Truck> truckDrivingList;
@@ -24,24 +24,24 @@ public class Solution {
     	answer = 0;	
     	maximumTotalWeight = weight;
     	
-    	// ´ë±â ÁßÀÎ Æ®·° ¸ñ·ÏÀ» ¼ø¼­´ë·Î Å¥¿¡ ³Ö´Â´Ù.
+    	// ëŒ€ê¸° ì¤‘ì¸ íŠ¸ëŸ­ ëª©ë¡ì„ ìˆœì„œëŒ€ë¡œ íì— ë„£ëŠ”ë‹¤.
     	for(int i=0;i<truck_weights.length;i++) {
     		truckWaitingList.add(new Truck(0, truck_weights[i]));
     	}
     	
-    	// ¹İº¹¹® 1È¸¿¡ 1ÃÊ
+    	// ë°˜ë³µë¬¸ 1íšŒì— 1ì´ˆ
     	while(true) {  
         	//printDrivingTruckList();
         	//printWaitingTruckList();
     		answer++;
     		//System.out.println("answer:"+answer);
     		
-    		// ´Ù¸® À§¿¡ ÀÖ´Â Æ®·°À» ÃÊ´ç 1¾¿ ÀÌµ¿ ½ÃÅ²´Ù.
+    		// ë‹¤ë¦¬ ìœ„ì— ìˆëŠ” íŠ¸ëŸ­ì„ ì´ˆë‹¹ 1ì”© ì´ë™ ì‹œí‚¨ë‹¤.
         	for(Truck truck:truckDrivingList) {
         		truck.distance++;
         	}
         	
-        	// Æ®·°ÀÌ ´Ù¸®¸¦ °Ç³ÔÀ¸¸é °Ç³Ê°í ÀÖ´Â ¸ñ·Ï¿¡¼­ »«´Ù.
+        	// íŠ¸ëŸ­ì´ ë‹¤ë¦¬ë¥¼ ê±´ë„œìœ¼ë©´ ê±´ë„ˆê³  ìˆëŠ” ëª©ë¡ì—ì„œ ëº€ë‹¤.
     		if( !truckDrivingList.isEmpty()) {
     			if(truckDrivingList.getFirst().distance > bridge_length) {
         			//Truck truck = truckDrivingList.pollFirst();
@@ -55,7 +55,7 @@ public class Solution {
     		
     		//System.out.println("truckWaitingList.getFirst().weight:"+truckWaitingList.getFirst().weight);
     		//System.out.println("currentTotalWeight:"+currentTotalWeight);
-    		// Æ®·°ÀÌ °Ç³Î ¼ö ÀÖÀ¸¸é °Ç³Ê´Â ¸ñ·Ï¿¡ Ãß°¡ÇÑ´Ù.
+    		// íŠ¸ëŸ­ì´ ê±´ë„ ìˆ˜ ìˆìœ¼ë©´ ê±´ë„ˆëŠ” ëª©ë¡ì— ì¶”ê°€í•œë‹¤.
         	if( !truckWaitingList.isEmpty() 
     			&& truckWaitingList.getFirst().weight <= maximumTotalWeight-currentTotalWeight ) {
         		Truck truck = truckWaitingList.removeFirst();
@@ -64,7 +64,7 @@ public class Solution {
         		truckDrivingList.add(truck);
         	}
     		  		
-        	// Æ®·°ÀÌ ´Ù °Ç³ÔÀ¸¸é Á¾·áÇÑ´Ù.
+        	// íŠ¸ëŸ­ì´ ë‹¤ ê±´ë„œìœ¼ë©´ ì¢…ë£Œí•œë‹¤.
     		if(truckDrivingList.isEmpty() && truckWaitingList.isEmpty()) {
     			break;
     		}

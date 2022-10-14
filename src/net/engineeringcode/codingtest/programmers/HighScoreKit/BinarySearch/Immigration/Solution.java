@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ÀÌºĞÅ½»ö > ÀÔ±¹½É»ç
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì´ë¶„íƒìƒ‰ > ì…êµ­ì‹¬ì‚¬
 	 * https://programmers.co.kr/learn/courses/30/lessons/43238
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
 	 */
 	
@@ -13,11 +13,11 @@ public class Solution {
         long answer = 0;
         Arrays.sort(times);
         
-        long left = (long) times[0]; // °¡Àå Âª°Ô °É¸®´Â ½Ã°£
-        long right = (long) times[times.length-1]*n; // °¡Àå ¿À·¡ °É¸®´Â ½Ã°£
+        long left = (long) times[0]; // ê°€ì¥ ì§§ê²Œ ê±¸ë¦¬ëŠ” ì‹œê°„
+        long right = (long) times[times.length-1]*n; // ê°€ì¥ ì˜¤ë˜ ê±¸ë¦¬ëŠ” ì‹œê°„
         while(left <= right) {
         	long mid = (left + right) / 2;
-        	long finishedCount = 0; // ½É»çÇÑ ÀÎ¿ø
+        	long finishedCount = 0; // ì‹¬ì‚¬í•œ ì¸ì›
         	
         	for(int time : times) {
         		finishedCount += (mid / time);

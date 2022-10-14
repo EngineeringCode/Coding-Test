@@ -3,15 +3,15 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ÇØ½Ã > ¿ÏÁÖÇÏÁö ¸øÇÑ ¼±¼ö
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í•´ì‹œ > ì™„ì£¼í•˜ì§€ ëª»í•œ ì„ ìˆ˜
 	 * https://programmers.co.kr/learn/courses/30/lessons/42576
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÀÌ·¸°Ô Ç®¸é Á¤È®¼º Å×½ºÆ®´Â Åë°úÇÏ³ª È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÏÁö ¸ø ÇÑ´Ù.
-	 * Solution2¿¡¼­ ÇØ½Ã¸¦ È°¿ëÇÏ¿© ÇØ°áÇÏ¿´´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì´ë ‡ê²Œ í’€ë©´ ì •í™•ì„± í…ŒìŠ¤íŠ¸ëŠ” í†µê³¼í•˜ë‚˜ íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•˜ì§€ ëª» í•œë‹¤.
+	 * Solution2ì—ì„œ í•´ì‹œë¥¼ í™œìš©í•˜ì—¬ í•´ê²°í•˜ì˜€ë‹¤.
 	 */
 	
     public String solution(String[] participant, String[] completion) {
-    	// Âü¿©ÇÑ ¼±¼ö ¸ñ·Ï¿¡ ¿ÏÁÖÇÑ ¼±¼ö ÀÌ¸§À» »«´Ù.
+    	// ì°¸ì—¬í•œ ì„ ìˆ˜ ëª©ë¡ì— ì™„ì£¼í•œ ì„ ìˆ˜ ì´ë¦„ì„ ëº€ë‹¤.
     	for(String comple: completion) {
     		for(int i=0;i<participant.length;i++) {
     			if(participant[i].equals(comple)) {
@@ -21,7 +21,7 @@ public class Solution {
     		}
     	}
     	
-    	// Âü¿©ÇÑ ¼±¼ö ¸ñ·Ï¿¡ ÀÌ¸§ÀÌ ÀÖ´Â »ç¶÷ÀÌ ¿ÏÁÖÇÏÁö ¸øÇÑ ¼±¼öÀÌ´Ù.
+    	// ì°¸ì—¬í•œ ì„ ìˆ˜ ëª©ë¡ì— ì´ë¦„ì´ ìˆëŠ” ì‚¬ëŒì´ ì™„ì£¼í•˜ì§€ ëª»í•œ ì„ ìˆ˜ì´ë‹¤.
     	for(String partici: participant) {
     		if(partici!="") {
     			return partici;

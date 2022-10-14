@@ -4,9 +4,9 @@ import java.util.*;
 class Solution
 {
 	/*
-	 * SW Expert Academy > CODE > Problem > 2072 > È¦¼ö¸¸ ´õÇÏ±â
-	 * ¹®Á¦ÁÖ¼Ò: https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5QSEhaA5sDFAUq
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * SW Expert Academy > CODE > Problem > 2072 > í™€ìˆ˜ë§Œ ë”í•˜ê¸°
+	 * ë¬¸ì œì£¼ì†Œ: https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5QSEhaA5sDFAUq
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
 	 */
 	

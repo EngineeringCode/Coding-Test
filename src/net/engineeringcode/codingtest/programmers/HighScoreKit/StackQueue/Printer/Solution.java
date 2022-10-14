@@ -3,19 +3,19 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ½ºÅÃ/Å¥ > ÇÁ¸°ÅÍ
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ìŠ¤íƒ/í > í”„ë¦°í„°
 	 * https://programmers.co.kr/learn/courses/30/lessons/42587
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
-	 * ¿ì¼±¼øÀ§°¡ ÀÖ´Â ÇÁ¸°ÅÍ Ãâ·Â ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ ¿ì¼±¼øÀ§ Å¥¸¦ ±¸ÇöÇÏ¿© ÇØ°áÇÏ¿´´Ù.
-	 * ÀÚ¹Ù¿¡¼­ ±âº»ÀûÀ¸·Î ±¸ÇöµÇ¾î ÀÖ´Â ¿ì¼±¼øÀ§ Å¥´Â ¹®Á¦¿¡¼­ ¸»ÇÏ´Â ¿ì¼±¼øÀ§¶û ´Ù¸¦ ¼öµµ ÀÖ±â¿¡
-	 * Å¥¸¦ LinkedList ÇüÅÂ·Î »ý¼ºÇÏ°í ¿ì¼±¼øÀ§¸¦ Ã³¸®ÇÏ´Â ±â´ÉÀ» ±¸ÇöÇÏ¿´´Ù.
+	 * ìš°ì„ ìˆœìœ„ê°€ ìžˆëŠ” í”„ë¦°í„° ì¶œë ¥ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ ìš°ì„ ìˆœìœ„ íë¥¼ êµ¬í˜„í•˜ì—¬ í•´ê²°í•˜ì˜€ë‹¤.
+	 * ìžë°”ì—ì„œ ê¸°ë³¸ì ìœ¼ë¡œ êµ¬í˜„ë˜ì–´ ìžˆëŠ” ìš°ì„ ìˆœìœ„ íëŠ” ë¬¸ì œì—ì„œ ë§í•˜ëŠ” ìš°ì„ ìˆœìœ„ëž‘ ë‹¤ë¥¼ ìˆ˜ë„ ìžˆê¸°ì—
+	 * íë¥¼ LinkedList í˜•íƒœë¡œ ìƒì„±í•˜ê³  ìš°ì„ ìˆœìœ„ë¥¼ ì²˜ë¦¬í•˜ëŠ” ê¸°ëŠ¥ì„ êµ¬í˜„í•˜ì˜€ë‹¤.
 	 */
 	public int solution(int[] priorities, int location) {
 		int answer = 0;
 		LinkedList<Document> list = new LinkedList<>();
 		
-		// Ãâ·ÂÇÒ ¸ñ·ÏÀ» Å¥¿¡ ³Ö´Â´Ù.
+		// ì¶œë ¥í•  ëª©ë¡ì„ íì— ë„£ëŠ”ë‹¤.
         for(int i=0; i<priorities.length; i++) {
         	if(i == location) {
         		list.add(new Document(priorities[i], true));
@@ -26,7 +26,7 @@ public class Solution {
         }        
     	//System.out.println();
         
-        // Ãâ·ÂÇÒ ¸ñ·ÏÀ» ¹®Á¦¿¡¼­ Á¦½ÃÇÑ ¿ì¼±¼øÀ§¿¡ µû¸¥ Ãâ·Â ¹æ¹ýÀ¸·Î Ã³¸®ÇÑ´Ù.
+        // ì¶œë ¥í•  ëª©ë¡ì„ ë¬¸ì œì—ì„œ ì œì‹œí•œ ìš°ì„ ìˆœìœ„ì— ë”°ë¥¸ ì¶œë ¥ ë°©ë²•ìœ¼ë¡œ ì²˜ë¦¬í•œë‹¤.
         for(;!list.isEmpty();) {
         	//Document document = list.poll();
         	Document document = list.pollFirst();
@@ -46,7 +46,7 @@ public class Solution {
         return answer;
     }
 	
-	// ¿ì¼± ¼øÀ§°¡ ´õ ³ôÀº ¹®¼­°¡ ¸ñ·Ï(ÇÁ¸°ÅÍ Å¥)¿¡ ÀÖ´ÂÁö È®ÀÎÇÑ´Ù.
+	// ìš°ì„  ìˆœìœ„ê°€ ë” ë†’ì€ ë¬¸ì„œê°€ ëª©ë¡(í”„ë¦°í„° í)ì— ìžˆëŠ”ì§€ í™•ì¸í•œë‹¤.
 	boolean isExistHigherPriority(Document document, LinkedList<Document> list) {
     	for(int i=0;i<list.size();i++) {
     		if(document.priority < list.get(i).priority) {

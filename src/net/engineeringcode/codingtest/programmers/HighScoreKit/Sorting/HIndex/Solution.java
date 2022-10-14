@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Á¤·Ä > H-Index
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì •ë ¬ > H-Index
 	 * https://programmers.co.kr/learn/courses/30/lessons/42748
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ³í¹®ÀÇ ¼ö¿Í ÀÎ¿ëÈ½¼ö¸¦ Åä´ë·Î H-Index¸¦ °è»êÇÏ´Â ¹®Á¦ÀÌ´Ù. 
-	 * H-Index¸¦ ¾Ë°í ÀÖ´Ù¸é ±Ý¹æ Ç® ¼ö ÀÖ´Â ¹®Á¦ÀÌ´Ù. ¾Æ´Ï¶ó¸é H-Index¿¡ ´ëÇØ¼­ ÀÌÇØÇÏ´Â ½Ã°£ÀÌ ÇÊ¿äÇÒ °ÍÀÌ´Ù.
-	 * ³ªÀÇ °æ¿ì ´ëÇÐ¿ø »ýÈ° ¶§ Á¢Çß±â ¶§¹®¿¡ ¾Ë°í ÀÖ´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë…¼ë¬¸ì˜ ìˆ˜ì™€ ì¸ìš©íšŸìˆ˜ë¥¼ í† ëŒ€ë¡œ H-Indexë¥¼ ê³„ì‚°í•˜ëŠ” ë¬¸ì œì´ë‹¤. 
+	 * H-Indexë¥¼ ì•Œê³  ìžˆë‹¤ë©´ ê¸ˆë°© í’€ ìˆ˜ ìžˆëŠ” ë¬¸ì œì´ë‹¤. ì•„ë‹ˆë¼ë©´ H-Indexì— ëŒ€í•´ì„œ ì´í•´í•˜ëŠ” ì‹œê°„ì´ í•„ìš”í•  ê²ƒì´ë‹¤.
+	 * ë‚˜ì˜ ê²½ìš° ëŒ€í•™ì› ìƒí™œ ë•Œ ì ‘í–ˆê¸° ë•Œë¬¸ì— ì•Œê³  ìžˆë‹¤.
 	 */
 	
     public int solution(int[] citations) {

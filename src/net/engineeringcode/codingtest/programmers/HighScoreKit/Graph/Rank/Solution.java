@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ±×·¡ÇÁ > °¡Àå ¸Õ ³ëµå
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ê·¸ë˜í”„ > ê°€ì¥ ë¨¼ ë…¸ë“œ
 	 * https://programmers.co.kr/learn/courses/30/lessons/49191
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÇØ¼³ : https://easybrother0103.tistory.com/131
-	 * '½¬¿îÇü'´ÔÀÇ ÇØ¼³À» Âü°íÇÏ¿´½À´Ï´Ù. ÇÃ·çÀÌµå-¿ö¼È ¾Ë°í¸®ÁòÀ» Àû¿ëÇÏ¿´½À´Ï´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * í•´ì„¤ : https://easybrother0103.tistory.com/131
+	 * 'ì‰¬ìš´í˜•'ë‹˜ì˜ í•´ì„¤ì„ ì°¸ê³ í•˜ì˜€ìŠµë‹ˆë‹¤. í”Œë£¨ì´ë“œ-ì›Œì…œ ì•Œê³ ë¦¬ì¦˜ì„ ì ìš©í•˜ì˜€ìŠµë‹ˆë‹¤.
 	 */
 	
 	public int solution(int n, int[][] results) {

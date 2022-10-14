@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > 2022 Ä«Ä«¿À ºí¶óÀÎµå Ã¤¿ë > ¾ç°ú ´Á´ë
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > 2022 ì¹´ì¹´ì˜¤ ë¸”ë¼ì¸ë“œ ì±„ìš© > ì–‘ê³¼ ëŠ‘ëŒ€
 	 * https://programmers.co.kr/learn/courses/30/lessons/92343
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
 	 */
 	int totalNodeCount;
@@ -19,15 +19,15 @@ public class Solution {
         childList = new ArrayList[info.length];
         nodeType = info;
         
-        //°£¼± Á¤º¸¸¦ ¸®½ºÆ®¿¡ ºÎ¸ğ °ü°è·Î °¡°øÇÑ´Ù.
+        //ê°„ì„  ì •ë³´ë¥¼ ë¦¬ìŠ¤íŠ¸ì— ë¶€ëª¨ ê´€ê³„ë¡œ ê°€ê³µí•œë‹¤.
         for(int[] edge: edges) {
         	int parent = edge[0];
         	int child = edge[1];     
-        	if(childList[parent]==null) { // ¸Ş¸ğ¸®¿¡ ÇÒ´çµÈ ÀûÀÌ ¾øÀ¸¸é »ı¼ºÇÑ´Ù.
+        	if(childList[parent]==null) { // ë©”ëª¨ë¦¬ì— í• ë‹¹ëœ ì ì´ ì—†ìœ¼ë©´ ìƒì„±í•œë‹¤.
         		childList[parent] = new ArrayList<>();
         	}
         	childList[parent].add(child);
-        	// Â÷ÀÏµå ³ëµå°¡ ¾ø´Â ´Á´ë´Â ¾çÀ» °¡Áö±â À§ÇØ °ÅÄ¥ ÇÊ¿ä°¡ ¾øÀ¸¹Ç·Î ±×·¡ÇÁ¿¡¼­ »èÁ¦ÇÏ¸é °è»êÇÒ ¾çÀ» ÁÙÀÏ ¼ö ÀÖ´Ù.
+        	// ì°¨ì¼ë“œ ë…¸ë“œê°€ ì—†ëŠ” ëŠ‘ëŒ€ëŠ” ì–‘ì„ ê°€ì§€ê¸° ìœ„í•´ ê±°ì¹  í•„ìš”ê°€ ì—†ìœ¼ë¯€ë¡œ ê·¸ë˜í”„ì—ì„œ ì‚­ì œí•˜ë©´ ê³„ì‚°í•  ì–‘ì„ ì¤„ì¼ ìˆ˜ ìˆë‹¤.
         }
         
         ArrayList<Integer> available = new ArrayList<>();
@@ -39,25 +39,25 @@ public class Solution {
     }
     
     void dfs(int currentNode, int sheepCount, int wolfCount, ArrayList<Integer> availableChildList){
-    	// ÇöÀç ³ëµå°¡ ¾çÀÎÁö ´Á´ëÀÎÁö È®ÀÎÇÏ°í °³¼ö¸¦ Áõ°¡½ÃÅ´
+    	// í˜„ì¬ ë…¸ë“œê°€ ì–‘ì¸ì§€ ëŠ‘ëŒ€ì¸ì§€ í™•ì¸í•˜ê³  ê°œìˆ˜ë¥¼ ì¦ê°€ì‹œí‚´
     	sheepCount += nodeType[currentNode] ^ 1;
     	wolfCount += nodeType[currentNode];
     	
-    	// ÇöÀç ¾çÀÇ ¼ö°¡ °¡Àå Å« °æ¿ìÀÌ¸é °»½Å
+    	// í˜„ì¬ ì–‘ì˜ ìˆ˜ê°€ ê°€ì¥ í° ê²½ìš°ì´ë©´ ê°±ì‹ 
     	maximumSheepCount = Math.max(sheepCount, maximumSheepCount);
     	
-    	if(sheepCount<=wolfCount) { // ´Á´ëÀÇ ¼ö°¡ ¾çÀÇ ¼ö ÀÌ»óÀÌ¸é
+    	if(sheepCount<=wolfCount) { // ëŠ‘ëŒ€ì˜ ìˆ˜ê°€ ì–‘ì˜ ìˆ˜ ì´ìƒì´ë©´
     		return;
     	}
     	
     	/*
-    	 *  ÇöÀç ³ëµå¿¡ ÀÚ½Ä ³ëµå°¡ ÀÖÀ¸¸é ¹æ¹®ÇÒ ÀÚ½Ä ³ëµå ¸ñ·Ï¿¡ ÀÚ½Ä ³ëµå Á¤º¸¸¦ ³Ö°í
-    	 *  ÇöÀç ³ëµå´Â ¹æ¹®ÇßÀ¸´Ï ÀÚ½Ä ³ëµå ¸ñ·Ï¿¡¼­ »«´Ù.
-    	 *  ¹æ¹®ÇÒ ³ëµå°¡ ÀÖÀ¸¸é Àç±Í È£ÃâµÇ°í ¾øÀ¸¸é ÇÔ¼ö´Â Á¾·áµÈ´Ù.
-    	 *  ¹æ¹®ÇÒ ³ëµå ¸ñ·ÏÀº ±íÀº º¹»ç·Î Ãß°¡ »ı¼ºÇØ¼­ °ü¸®ÇØ¾ß ÇÑ´Ù. ¾È ±×·¯¸é ´ÙÀ½ Å½»ö °æ¿ì¿¡¼­ Àü¿¡ ¾²´ø ¹æ¹®ÇÒ ³ëµå ¸ñ·ÏÀ» ÂüÁ¶ÇÏ±â ¶§¹®¿¡ ¿øÇÏÁö ¾Ê´Â µ¿ÀÛÀÌ ¹ß»ıÇÑ´Ù.
+    	 *  í˜„ì¬ ë…¸ë“œì— ìì‹ ë…¸ë“œê°€ ìˆìœ¼ë©´ ë°©ë¬¸í•  ìì‹ ë…¸ë“œ ëª©ë¡ì— ìì‹ ë…¸ë“œ ì •ë³´ë¥¼ ë„£ê³ 
+    	 *  í˜„ì¬ ë…¸ë“œëŠ” ë°©ë¬¸í–ˆìœ¼ë‹ˆ ìì‹ ë…¸ë“œ ëª©ë¡ì—ì„œ ëº€ë‹¤.
+    	 *  ë°©ë¬¸í•  ë…¸ë“œê°€ ìˆìœ¼ë©´ ì¬ê·€ í˜¸ì¶œë˜ê³  ì—†ìœ¼ë©´ í•¨ìˆ˜ëŠ” ì¢…ë£Œëœë‹¤.
+    	 *  ë°©ë¬¸í•  ë…¸ë“œ ëª©ë¡ì€ ê¹Šì€ ë³µì‚¬ë¡œ ì¶”ê°€ ìƒì„±í•´ì„œ ê´€ë¦¬í•´ì•¼ í•œë‹¤. ì•ˆ ê·¸ëŸ¬ë©´ ë‹¤ìŒ íƒìƒ‰ ê²½ìš°ì—ì„œ ì „ì— ì“°ë˜ ë°©ë¬¸í•  ë…¸ë“œ ëª©ë¡ì„ ì°¸ì¡°í•˜ê¸° ë•Œë¬¸ì— ì›í•˜ì§€ ì•ŠëŠ” ë™ì‘ì´ ë°œìƒí•œë‹¤.
     	 */
     	
-    	// ÄÚµù 1
+    	// ì½”ë”© 1
     	/*
     	ArrayList<Integer> currentAvailableChildList = new ArrayList<>();
     	currentAvailableChildList.addAll(availableChildList);
@@ -72,7 +72,7 @@ public class Solution {
     	}
     	*/
     	
-    	//ÄÚµù2    	
+    	//ì½”ë”©2    	
         if(childList[currentNode]!=null) {
         	availableChildList.addAll(childList[currentNode]);
         }

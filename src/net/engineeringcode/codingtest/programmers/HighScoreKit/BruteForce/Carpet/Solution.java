@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ¿ÏÀüÅ½»ö > Ä«Æê
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì™„ì „íƒìƒ‰ > ì¹´í«
 	 * https://programmers.co.kr/learn/courses/30/lessons/42842
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * °¡ÀåÀÚ¸®ÀÇ °ªÀÌ brown ±× ¿ÜÀÇ °ªÀÌ yellow ÀÎ ¹è¿­ÀÇ Å©±â¸¦ ±¸ÇÏ´Â ¹®Á¦ÀÌ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ê°€ì¥ìë¦¬ì˜ ê°’ì´ brown ê·¸ ì™¸ì˜ ê°’ì´ yellow ì¸ ë°°ì—´ì˜ í¬ê¸°ë¥¼ êµ¬í•˜ëŠ” ë¬¸ì œì´ë‹¤.
 	 */
 	
     public int[] solution(int brown, int yellow) {

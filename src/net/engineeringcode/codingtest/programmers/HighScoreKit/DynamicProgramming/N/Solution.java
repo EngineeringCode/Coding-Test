@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > µ¿Àû°èÈ¹¹ı(Dynamic Programming) > NÀ¸·Î Ç¥Çö
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ë™ì ê³„íšë²•(Dynamic Programming) > Nìœ¼ë¡œ í‘œí˜„
 	 * https://programmers.co.kr/learn/courses/30/lessons/42895
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÇØ¼³: https://small-stap.tistory.com/65
-	 * 'ÀÛÀº ÇÑ°ÉÀ½'´ÔÀÌ ÀÛ¼ºÇÏ½Å ÇØ¼³°ú ¼Ò½ºÄÚµå¸¦ Âü°íÇß½À´Ï´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * í•´ì„¤: https://small-stap.tistory.com/65
+	 * 'ì‘ì€ í•œê±¸ìŒ'ë‹˜ì´ ì‘ì„±í•˜ì‹  í•´ì„¤ê³¼ ì†ŒìŠ¤ì½”ë“œë¥¼ ì°¸ê³ í–ˆìŠµë‹ˆë‹¤.
 	 */
 	
     public int solution(int N, int number) {
@@ -43,7 +43,7 @@ public class Solution {
         		}
         	}
         	
-        	countSet.add(Integer.parseInt(String.valueOf(N).repeat(i))); // repeat()Àº ÀÚ¹Ù 11¿¡ Ãß°¡µÈ ¸Ş¼­µåÀÔ´Ï´Ù. ÇÁ·Î±×·¡¸Ó½º´Â ÀÚ¹Ù 14 È¯°æ¿¡¼­ µ¿ÀÛÇÏ´Ï º» ¸Ş¼­µå¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.
+        	countSet.add(Integer.parseInt(String.valueOf(N).repeat(i))); // repeat()ì€ ìë°” 11ì— ì¶”ê°€ëœ ë©”ì„œë“œì…ë‹ˆë‹¤. í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ëŠ” ìë°” 14 í™˜ê²½ì—ì„œ ë™ì‘í•˜ë‹ˆ ë³¸ ë©”ì„œë“œë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
         }
         
         for(Set<Integer> subSet : setList) {

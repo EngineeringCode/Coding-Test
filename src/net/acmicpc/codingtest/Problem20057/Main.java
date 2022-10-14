@@ -3,13 +3,13 @@ import java.util.*;
 
 public class Main{
 	/*
-	 * Baekjoon Online Judge > Problem > 20057 > ¸¶¹ı»ç »ó¾î¿Í Åä³×ÀÌµµ
-	 * ¹®Á¦ÁÖ¼Ò: https://www.acmicpc.net/problem/20057
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * Baekjoon Online Judge > Problem > 20057 > ë§ˆë²•ì‚¬ ìƒì–´ì™€ í† ë„¤ì´ë„
+	 * ë¬¸ì œì£¼ì†Œ: https://www.acmicpc.net/problem/20057
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
-	 * ½Ã¹Ä·¹ÀÌ¼Ç ¹®Á¦ÀÌ´Ù. ±¸Çö·ÂÀÌ Áß¿äÇÏ´Ù. Âü°í¹®¼­¿Í Ã³¸®¼º´ÉÂ÷ÀÌ°¡ ¸¹ÀÌ ³ª´Âµ¥ ¿øÀÎÀ» Ã£°Ô µÇ¸é ¹İ¿µÇÏ°Ú´Ù.
+	 * ì‹œë®¬ë ˆì´ì…˜ ë¬¸ì œì´ë‹¤. êµ¬í˜„ë ¥ì´ ì¤‘ìš”í•˜ë‹¤. ì°¸ê³ ë¬¸ì„œì™€ ì²˜ë¦¬ì„±ëŠ¥ì°¨ì´ê°€ ë§ì´ ë‚˜ëŠ”ë° ì›ì¸ì„ ì°¾ê²Œ ë˜ë©´ ë°˜ì˜í•˜ê² ë‹¤.
 	 * 
-	 * Âü°í¹®¼­: https://alwaysbemoon.tistory.com/225
+	 * ì°¸ê³ ë¬¸ì„œ: https://alwaysbemoon.tistory.com/225
 	 */
 	
 	static int N;
@@ -66,24 +66,24 @@ public class Main{
 	}
 	
 	static int simulation() {
-		// ¹è¿­ °¡¿îµ¥ ÁÂÇ¥¸¦ ±¸ÇÑ´Ù.
+		// ë°°ì—´ ê°€ìš´ë° ì¢Œí‘œë¥¼ êµ¬í•œë‹¤.
 		int currentX = N/2;
 		int currentY = N/2;
 
 		for(;;) {
-			// ÇÑ ¹ÙÄû(4¹æÇâ)¸¦ µ¹°í ÀÌµ¿ÇÏ´Â ¾çÀÌ Áõ°¡ÇÑ´Ù.
+			// í•œ ë°”í€´(4ë°©í–¥)ë¥¼ ëŒê³  ì´ë™í•˜ëŠ” ì–‘ì´ ì¦ê°€í•œë‹¤.
 			for(int directionIndex = 0; directionIndex < 4; directionIndex++) {
-				// ¸ñÇ¥ ÁöÁ¡±îÁö Åä³×ÀÌµµ°¡ 1Ä­¾¿ ÀÌµ¿ÇÑ´Ù.
+				// ëª©í‘œ ì§€ì ê¹Œì§€ í† ë„¤ì´ë„ê°€ 1ì¹¸ì”© ì´ë™í•œë‹¤.
 				for(int movementCount = 0; movementCount < directionWeight[directionIndex]; movementCount++) {
 					int nextX = currentX + directionX[directionIndex];
 					int nextY = currentY + directionY[directionIndex];
 					
-					// Åä³×ÀÌµµ°¡ ¸ğ·¡¹çÀ» ¹ş¾î³µ´Ù. ½Ã¹Ä·¹ÀÌ¼ÇÀ» Á¾·áÇÑ´Ù.
+					// í† ë„¤ì´ë„ê°€ ëª¨ë˜ë°­ì„ ë²—ì–´ë‚¬ë‹¤. ì‹œë®¬ë ˆì´ì…˜ì„ ì¢…ë£Œí•œë‹¤.
 					if(nextX < 0 || nextY < 0 || nextX >= N || nextY >= N) {
 						return amountOfSand;
 					}
 					
-					/* ¸ğ·¡ °è»ê ½ÃÀÛ */					
+					/* ëª¨ë˜ ê³„ì‚° ì‹œì‘ */					
                     int sandTotal = map[nextX][nextY];
                     map[nextX][nextY] = 0;
                     int spreadTotal = 0;
@@ -93,15 +93,15 @@ public class Main{
                         int sandY = nextY + spreadDirectionY[directionIndex][spreadIndex];
                         int spreadAmount = (sandTotal * spreadRate[spreadIndex]) / 100;
                         
-                        if(sandX < 0 || sandY < 0 || sandX >= N || sandY >= N){ // ¸ğ·¡¹çÀ» ¹ş¾î³ª¸é
+                        if(sandX < 0 || sandY < 0 || sandX >= N || sandY >= N){ // ëª¨ë˜ë°­ì„ ë²—ì–´ë‚˜ë©´
                         	amountOfSand += spreadAmount;
-                        } else { // ±âÁ¸ ¸ğ·¡ À§¿¡ ½×¿´´Ù.
+                        } else { // ê¸°ì¡´ ëª¨ë˜ ìœ„ì— ìŒ“ì˜€ë‹¤.
                             map[sandX][sandY] += spreadAmount;
                         }
                         spreadTotal += spreadAmount;
                     }
 
-                    /* ¥á °è»ê */
+                    /* Î± ê³„ì‚° */
                     int aX = nextX + directionX[directionIndex];
                     int aY = nextY + directionY[directionIndex];
                     int aAmount = sandTotal - spreadTotal;
@@ -110,14 +110,14 @@ public class Main{
                     } else {
                         map[aX][aY] += aAmount;
                     }				
-					/* ¸ğ·¡ °è»ê ³¡ */
+					/* ëª¨ë˜ ê³„ì‚° ë */
 	
 					currentX = nextX;
 					currentY = nextY;
 				}
 			}
 			
-			// ÇÑ ¹ÙÄû¸¦ µ¹¾ÒÀ¸¸é ÀÌµ¿ÇÏ´Â °Å¸® Ãß°¡
+			// í•œ ë°”í€´ë¥¼ ëŒì•˜ìœ¼ë©´ ì´ë™í•˜ëŠ” ê±°ë¦¬ ì¶”ê°€
 			for(int i = 0; i < 4; i++) {
 				directionWeight[i] += 2;
 			}

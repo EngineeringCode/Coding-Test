@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Å½¿å¹ı(Greedy) > Á¶ÀÌ½ºÆ½
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > íƒìš•ë²•(Greedy) > ì¡°ì´ìŠ¤í‹±
 	 * https://programmers.co.kr/learn/courses/30/lessons/42860
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
 	 */
 	
@@ -14,17 +14,17 @@ public class Solution {
         int cursorMovementCount = name.length()-1;
         
         for(int i=0;i<name.length();i++) {
-        	// ´ÙÀ½ ¾ËÆÄºªÀ¸·Î °¡´Â °æ¿ì¿Í ÀÌÀü ¾ËÆÄºªÀ¸·Î °¡´Â °æ¿ì Áß¿¡ ¹¹°¡ ´õ ºü¸¥Áö¸¦ °è»êÇÑ´Ù.
-        	alphabetChangeCount += Math.min(name.charAt(i)-'A', 'Z'-name.charAt(i)+1); // 1Àº Á¦ÀÏ µÚ·Î °¡±â À§ÇÑ Ä¿¼­ ÀÌµ¿À» 1¹ø ÇØ¾ßÇÏ±â ¶§¹®¿¡ Á¸Àç
+        	// ë‹¤ìŒ ì•ŒíŒŒë²³ìœ¼ë¡œ ê°€ëŠ” ê²½ìš°ì™€ ì´ì „ ì•ŒíŒŒë²³ìœ¼ë¡œ ê°€ëŠ” ê²½ìš° ì¤‘ì— ë­ê°€ ë” ë¹ ë¥¸ì§€ë¥¼ ê³„ì‚°í•œë‹¤.
+        	alphabetChangeCount += Math.min(name.charAt(i)-'A', 'Z'-name.charAt(i)+1); // 1ì€ ì œì¼ ë’¤ë¡œ ê°€ê¸° ìœ„í•œ ì»¤ì„œ ì´ë™ì„ 1ë²ˆ í•´ì•¼í•˜ê¸° ë•Œë¬¸ì— ì¡´ì¬
         	
         	int indexOfA = i+1;
         	while(indexOfA<name.length() && name.charAt(indexOfA) == 'A') {
         		indexOfA++;
         	}
         	
-        	// ¿ŞÂÊÀ¸·Î °¡´Â °ÍÀÌ ºü¸¥°¡?
+        	// ì™¼ìª½ìœ¼ë¡œ ê°€ëŠ” ê²ƒì´ ë¹ ë¥¸ê°€?
         	cursorMovementCount = Math.min(cursorMovementCount, i*2+(name.length()-indexOfA));
-        	// ´Ù½Ã ¿À¸¥ÂÊÀ¸·Î °¡´Â °ÍÀÌ ºü¸¥°¡?
+        	// ë‹¤ì‹œ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°€ëŠ” ê²ƒì´ ë¹ ë¥¸ê°€?
         	cursorMovementCount = Math.min(cursorMovementCount, i+(name.length()-indexOfA)*2);
         }
         		

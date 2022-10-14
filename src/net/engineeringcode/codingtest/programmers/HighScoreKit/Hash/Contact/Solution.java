@@ -2,12 +2,12 @@ package net.engineeringcode.codingtest.programmers.HighScoreKit.Hash.Contact;
 
 public class Solution {
 	/*
-	 * ���α׷��ӽ� > �ڵ��׽�Ʈ ���� > �ؽ� > ��ȭ��ȣ
+	 * 프로그래머스 > 코딩테스트 연습 > 해시 > 전화번호
 	 * https://programmers.co.kr/learn/courses/30/lessons/42577
-	 * �ۼ���: �����ڵ�(engineeringcode93@gmail.com)
-	 * ������ ������ �����ϴ� �Ϳ� �ð��� ���� �ɷȴ�. ��ȣ�� �߿� �ϳ��� �ٸ� ����� ��ȣ���� �����ϴ� ���� ��찡 ������ false��� ���̴�.
-	 * �ܼ��ϰ� �迭�� �ϳ��� ��ȸ�ϸ鼭 ��� ��츦 ����ϸ� ��Ȯ�� �׽�Ʈ�� ��������� ȿ���� �׽�Ʈ�� ������� �� �Ѵ�.
-	 * ȿ�����׽�Ʈ�� �ؽø� ����ؼ� ����� ���� Solution2�� �ִ�.
+	 * 작성자: 공학코드(engineeringcode93@gmail.com)
+	 * 문제의 지문을 이해하는 것에 시간이 오래 걸렸다. 번호들 중에 하나라도 다른 사람의 번호에서 시작하는 같은 경우가 있으면 false라는 말이다.
+	 * 단순하게 배열을 하나씩 순회하면서 모든 경우를 계산하면 정확성 테스트는 통과하지만 효율성 테스트를 통과하지 못 한다.
+	 * 효율성테스트를 해시를 사용해서 통과한 것은 Solution2에 있다.
 	 */
 	
     public boolean solution(String[] phone_book) {

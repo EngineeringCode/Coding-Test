@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ¿ÏÀüÅ½»ö > ¸ğÀÇ°í»ç
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì™„ì „íƒìƒ‰ > ëª¨ì˜ê³ ì‚¬
 	 * https://programmers.co.kr/learn/courses/30/lessons/42840
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ´äÀ» °í¸£´Â ¹æ½Ä¿¡ µû¶ó Á¤´ä ¼ö¸¦ °è»êÇØ¼­ ÃÖ°íµæÁ¡ÀÚ¸¦ Ã£´Â ¹®Á¦
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë‹µì„ ê³ ë¥´ëŠ” ë°©ì‹ì— ë”°ë¼ ì •ë‹µ ìˆ˜ë¥¼ ê³„ì‚°í•´ì„œ ìµœê³ ë“ì ìë¥¼ ì°¾ëŠ” ë¬¸ì œ
 	 */
 	
     public int[] solution(int[] answers) {
@@ -14,7 +14,7 @@ public class Solution {
     	int[] answerPatternOne = new int[] {1, 2, 3, 4, 5};
     	int[] answerPatternTwo = new int[] {2, 1, 2, 3, 2, 4, 2, 5};
     	int[] aAnswerPatternThree = new int[] {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-    	// ´äÀÌ ¸Â´ÂÁö È®ÀÎÇÏ°í ¸ÂÃá °¹¼ö¸¦ ¼¾´Ù.
+    	// ë‹µì´ ë§ëŠ”ì§€ í™•ì¸í•˜ê³  ë§ì¶˜ ê°¯ìˆ˜ë¥¼ ì„¼ë‹¤.
     	for(int i=0;i<answers.length;i++) {
     		if(answers[i] == answerPatternOne[i%answerPatternOne.length]) {
     			answerCount[0]++;
@@ -26,7 +26,7 @@ public class Solution {
     			answerCount[2]++;
     		}
     	}
-    	// °¡Àå ¸¹ÀÌ ¸ÂÃá »ç¶÷ Á¤º¸¸¦ ´ã´Â´Ù. °¡Àå ³ôÀº Á¡¼ö¸¦ ¹ŞÀº »ç¶÷ÀÌ ¿©·µÀÏ ¼ö ÀÖÀ¸¸ç ÀÌ °æ¿ì ¿À¸§Â÷¼ø Á¤·ÄÇÑ´Ù.
+    	// ê°€ì¥ ë§ì´ ë§ì¶˜ ì‚¬ëŒ ì •ë³´ë¥¼ ë‹´ëŠ”ë‹¤. ê°€ì¥ ë†’ì€ ì ìˆ˜ë¥¼ ë°›ì€ ì‚¬ëŒì´ ì—¬ëŸ¿ì¼ ìˆ˜ ìˆìœ¼ë©° ì´ ê²½ìš° ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•œë‹¤.
     	ArrayList<Integer> answerList = new ArrayList<>();
     	int maximumAnswerCount = 0;
     	for(int i=0; i<answerCount.length; i++) {
@@ -38,7 +38,7 @@ public class Solution {
     			answerList.add(i+1);
     		}
     	}
-    	// ¹®Á¦¿¡¼­ ¿ä±¸ÇÏ´Â ÇüÅÂ·Î ¸ÂÃá »ç¶÷ Á¤º¸¸¦ °¡°øÇÑ´Ù.
+    	// ë¬¸ì œì—ì„œ ìš”êµ¬í•˜ëŠ” í˜•íƒœë¡œ ë§ì¶˜ ì‚¬ëŒ ì •ë³´ë¥¼ ê°€ê³µí•œë‹¤.
         int[] answer = new int[answerList.size()];
         for(int i=0; i<answerList.size(); i++) {
         	answer[i] = answerList.get(i);

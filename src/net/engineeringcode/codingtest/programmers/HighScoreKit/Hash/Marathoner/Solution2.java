@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ÇØ½Ã > ¿ÏÁÖÇÏÁö ¸øÇÑ ¼±¼ö
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í•´ì‹œ > ì™„ì£¼í•˜ì§€ ëª»í•œ ì„ ìˆ˜
 	 * https://programmers.co.kr/learn/courses/30/lessons/42576
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ÇØ½Ã¸ÊÀ» È°¿ëÇÏ¿© Á¤È®¼º Å×½ºÆ®¿Í È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÏ¿´´Ù.
-	 * ÇØ½Ã¸ÊÀº ¸¶¶óÅæ ¼±¼öÀÇ ÀÌ¸§À» Å°·Î ÇÏ¿´°í ÀÎ¿ø¼ö¸¦ °ªÀ¸·Î ÀúÀåÇÏ¿´´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * í•´ì‹œë§µì„ í™œìš©í•˜ì—¬ ì •í™•ì„± í…ŒìŠ¤íŠ¸ì™€ íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•˜ì˜€ë‹¤.
+	 * í•´ì‹œë§µì€ ë§ˆë¼í†¤ ì„ ìˆ˜ì˜ ì´ë¦„ì„ í‚¤ë¡œ í•˜ì˜€ê³  ì¸ì›ìˆ˜ë¥¼ ê°’ìœ¼ë¡œ ì €ìž¥í•˜ì˜€ë‹¤.
 	 */
 	
     public String solution(String[] participant, String[] completion) {

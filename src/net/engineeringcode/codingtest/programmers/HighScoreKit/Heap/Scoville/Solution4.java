@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution4 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Èü > ´õ ¸Ê°Ô
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í™ > ë” ë§µê²Œ
 	 * https://programmers.co.kr/learn/courses/30/lessons/42626
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * Solution3Ã³·³ ¿ì¼±¼øÀ§Å¥¸¦ »ç¿ëÇßÁö¸¸ Àç±ÍÇÔ¼ö·Î Ç®¾ú´Ù.
-	 * Àç±ÍÇÔ¼ö ±íÀÌ Á¦¾àÀÌ ÀÖÀ¸¹Ç·Î È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÏÁö ¸ø ÇÑ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * Solution3ì²˜ëŸ¼ ìš°ì„ ìˆœìœ„íë¥¼ ì‚¬ìš©í–ˆì§€ë§Œ ì¬ê·€í•¨ìˆ˜ë¡œ í’€ì—ˆë‹¤.
+	 * ì¬ê·€í•¨ìˆ˜ ê¹Šì´ ì œì•½ì´ ìˆìœ¼ë¯€ë¡œ íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•˜ì§€ ëª» í•œë‹¤.
 	 */	
 	public int solution(int[] scoville, int K) {
 		PriorityQueue<Integer> scovilleQueue = new PriorityQueue<>();
@@ -18,15 +18,15 @@ public class Solution4 {
     }
     
     int cook(PriorityQueue<Integer> scovilleQueue, int K, int mixedCount){    	
-        if(scovilleQueue.peek() >= K){ // Ã¹ ¹øÂ° À½½ÄÀÌ K ½ºÄÚºô ÀÌ»óÀÌ¸é ¸ğµç À½½ÄÀÌ K ½ºÄÚºô ÀÌ»óÀÌ´Ù.
+        if(scovilleQueue.peek() >= K){ // ì²« ë²ˆì§¸ ìŒì‹ì´ K ìŠ¤ì½”ë¹Œ ì´ìƒì´ë©´ ëª¨ë“  ìŒì‹ì´ K ìŠ¤ì½”ë¹Œ ì´ìƒì´ë‹¤.
         	return mixedCount;
         }
         
-    	if(scovilleQueue.size() == 1){ // ¸ğµç À½½ÄÀÌ K ½ºÄÚºôÀ» ³ÑÁö ¸ø ÇÏ¿´´Â°¡?
+    	if(scovilleQueue.size() == 1){ // ëª¨ë“  ìŒì‹ì´ K ìŠ¤ì½”ë¹Œì„ ë„˜ì§€ ëª» í•˜ì˜€ëŠ”ê°€?
         	return -1;
         }
         
-        // À½½ÄÀ» ¼¯¾îº¸ÀÚ
+        // ìŒì‹ì„ ì„ì–´ë³´ì
         int scovilleOne = scovilleQueue.poll();
         int scovilleTwo = scovilleQueue.poll();        
         scovilleQueue.offer(scovilleOne+scovilleTwo*2);

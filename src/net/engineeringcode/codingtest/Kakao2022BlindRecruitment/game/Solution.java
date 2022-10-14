@@ -1,10 +1,10 @@
 package net.engineeringcode.codingtest.Kakao2022BlindRecruitment.game;
 
 public class Solution {
-	/* ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > 2022 KAKAO BLIND RECRUITMENT > »ç¶óÁö´Â ¹ßÆÇ
-	 * Ç®·¯°¡±â: https://programmers.co.kr/learn/courses/30/lessons/92345
-	 * ÇØ´ä¿øº»: https://github.com/encrypted-def/kakao-blind-recruitment/blob/master/2022-blind/Q7.java
-	 * ¹ÙÅ·µ¶´ÔÀÌ Á¦½ÃÇÏ½Å ÇØ´äÀ» ÀÌÇØÇÏ±â ½±°Ô º¯¼ö¸í°ú ÇÔ¼ö¸íÀ» º¯°æÇÏ°í ½ÇÇàÇÒ ¼ö ÀÖ°Ô mainÀ» Ãß°¡ÇÏ¿´½À´Ï´Ù.
+	/* í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > 2022 KAKAO BLIND RECRUITMENT > ì‚¬ë¼ì§€ëŠ” ë°œíŒ
+	 * í’€ëŸ¬ê°€ê¸°: https://programmers.co.kr/learn/courses/30/lessons/92345
+	 * í•´ë‹µì›ë³¸: https://github.com/encrypted-def/kakao-blind-recruitment/blob/master/2022-blind/Q7.java
+	 * ë°”í‚¹ë…ë‹˜ì´ ì œì‹œí•˜ì‹  í•´ë‹µì„ ì´í•´í•˜ê¸° ì‰½ê²Œ ë³€ìˆ˜ëª…ê³¼ í•¨ìˆ˜ëª…ì„ ë³€ê²½í•˜ê³  ì‹¤í–‰í•  ìˆ˜ ìˆê²Œ mainì„ ì¶”ê°€í•˜ì˜€ìŠµë‹ˆë‹¤.
 	 */
 	
 	int[] directionX = {0,0,-1,1};
@@ -13,12 +13,12 @@ public class Solution {
 	int boardLengthX;
 	int boardLengthY;
 	
-	// ÇÃ·¹ÀÌÇÒ ¼ö ¾ø´Â °¡ÀåÀÚ¸®¿¡ µµ´ŞÇß´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö 
+	// í”Œë ˆì´í•  ìˆ˜ ì—†ëŠ” ê°€ì¥ìë¦¬ì— ë„ë‹¬í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜ 
 	boolean IsOutOfBounds(int x, int y) {
 		return x<0 || x>=boardLengthX || y<0 || y>=boardLengthY;
 	}
 	
-	// ÀÌµ¿ °æ·Î¸¦ Å½»öÇÒ ¶§ ¹è¿­ ¹üÀ§¸¦ ³Ñ¾î°¡´Â °æ¿ì ¿À·ù°¡ ¹ß»ıÇÏ¹Ç·Î ½±°Ô ÇØ°áÇÏ±â À§ÇØ¼­ ¹è¿­À» 2Ä­¾¿ ´Ã¸²
+	// ì´ë™ ê²½ë¡œë¥¼ íƒìƒ‰í•  ë•Œ ë°°ì—´ ë²”ìœ„ë¥¼ ë„˜ì–´ê°€ëŠ” ê²½ìš° ì˜¤ë¥˜ê°€ ë°œìƒí•˜ë¯€ë¡œ ì‰½ê²Œ í•´ê²°í•˜ê¸° ìœ„í•´ì„œ ë°°ì—´ì„ 2ì¹¸ì”© ëŠ˜ë¦¼
 	boolean[][] visited = new boolean[5][5];
 	int[][] boardExpanded = new int[5][5];
 
@@ -26,7 +26,7 @@ public class Solution {
 		boardLengthX = board.length;
 		boardLengthY = board[0].length;
 		
-		// °¡ÀåÀÚ¸® Ã³¸®¸¦ À§ÇØ ÇÃ·¹ÀÌÇÏ´Â °ø°£À» ¾ç³¡¿¡ 1°³¾¿ ´Ã¸®´Â ÀÛ¾÷
+		// ê°€ì¥ìë¦¬ ì²˜ë¦¬ë¥¼ ìœ„í•´ í”Œë ˆì´í•˜ëŠ” ê³µê°„ì„ ì–‘ëì— 1ê°œì”© ëŠ˜ë¦¬ëŠ” ì‘ì—…
         for(int i = 0; i < boardLengthX; i++) {
         	for(int j = 0; j < boardLengthY; j++) {
         		boardExpanded[i][j] = board[i][j];
@@ -37,44 +37,44 @@ public class Solution {
     }
 	
 	 int solve(int currentX, int currentY, int opponentX, int opponentY){
-		// ÀÌ¹Ì ¹æ¹®Çß´ø °÷ÀÌ¶ó ¹ßÆÇÀÌ ¾ø´Ù¸é
+		// ì´ë¯¸ ë°©ë¬¸í–ˆë˜ ê³³ì´ë¼ ë°œíŒì´ ì—†ë‹¤ë©´
         if(visited[currentX][currentY]) {
         	return 0;    
         }
         int expectedTurn = 0;
-        // ÇÃ·¹ÀÌ¾î¸¦ »ó,ÇÏ,ÁÂ,¿ì·Î ÀÌµ¿½ÃÅ²´Ù.
+        // í”Œë ˆì´ì–´ë¥¼ ìƒ,í•˜,ì¢Œ,ìš°ë¡œ ì´ë™ì‹œí‚¨ë‹¤.
         for(int direction = 0; direction < 4; direction++){
             int futureX = currentX + directionX[direction];
             int futureY = currentY + directionY[direction];
-            if(IsOutOfBounds(futureX,futureY) // °¡ÀåÀÚ¸®ÀÌ¸é ¹æ¹®ÇÏÁö ¾Ê°í
-        		|| visited[futureX][futureY] // ¹æ¹®Çß´ø °÷ÀÌ¸é ¹æ¹®ÇÏÁö ¾Ê°í
-				|| boardExpanded[futureX][futureY] == 0) { // ¹ßÆÇÀÌ ¾øÀ¸¸é ¹æ¹®ÇÏÁö ¾Ê´Â´Ù.
+            if(IsOutOfBounds(futureX,futureY) // ê°€ì¥ìë¦¬ì´ë©´ ë°©ë¬¸í•˜ì§€ ì•Šê³ 
+        		|| visited[futureX][futureY] // ë°©ë¬¸í–ˆë˜ ê³³ì´ë©´ ë°©ë¬¸í•˜ì§€ ì•Šê³ 
+				|| boardExpanded[futureX][futureY] == 0) { // ë°œíŒì´ ì—†ìœ¼ë©´ ë°©ë¬¸í•˜ì§€ ì•ŠëŠ”ë‹¤.
             	continue;
             }
             
-            // ÇÃ·¹ÀÌ¾î°¡ ÀÖ´Â °÷¿¡ ¹æ¹®Ç¥½Ã¸¦ ³²±èÀ¸·Î¼­ ¹ßÆÇÀÌ ¾ø´Â °ÍÀ¸·Î Ã³¸®ÇÑ´Ù.
+            // í”Œë ˆì´ì–´ê°€ ìˆëŠ” ê³³ì— ë°©ë¬¸í‘œì‹œë¥¼ ë‚¨ê¹€ìœ¼ë¡œì„œ ë°œíŒì´ ì—†ëŠ” ê²ƒìœ¼ë¡œ ì²˜ë¦¬í•œë‹¤.
             visited[currentX][currentY] = true; 
 
-            // ÇÃ·¹ÀÌ¾î¸¦ direction ¹æÇâÀ¸·Î ÀÌµ¿½ÃÄ×À» ¶§ ÅÏÀÇ ¼ö
-            // ´ÙÀ½ ÇÔ¼ö¸¦ È£ÃâÇÒ ¶§´Â ÀÌµ¿ÇÏ´Â ÇÃ·¹ÀÌ¾î¿Í »ó´ë ÇÃ·¹ÀÌ¾î°¡ ¹Ù²î¹Ç·Î
-            // ÀÎÀÚ°¡ ´Ù¸£°Ô ÁöÁ¤ÇØ¾ßÇÑ´Ù.
+            // í”Œë ˆì´ì–´ë¥¼ direction ë°©í–¥ìœ¼ë¡œ ì´ë™ì‹œì¼°ì„ ë•Œ í„´ì˜ ìˆ˜
+            // ë‹¤ìŒ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•  ë•ŒëŠ” ì´ë™í•˜ëŠ” í”Œë ˆì´ì–´ì™€ ìƒëŒ€ í”Œë ˆì´ì–´ê°€ ë°”ë€Œë¯€ë¡œ
+            // ì¸ìê°€ ë‹¤ë¥´ê²Œ ì§€ì •í•´ì•¼í•œë‹¤.
             int currentTurn = solve(opponentX, opponentY, futureX, futureY)+1;      
 
-            // ¹æ¹® Ç¥½Ã ÇØÁ¦
+            // ë°©ë¬¸ í‘œì‹œ í•´ì œ
             visited[currentX][currentY] = false; 
             
-            // °ÔÀÓÀÇ Æ¯Â¡»ó ÅÏÀ» 2·Î ³ª´©¾úÀ» ¶§ ½Â¸®ÇÏ´Â ÅÏÀº ³ª¸ÓÁö°¡ 1ÀÏ ¶§ÀÌ´Ù.
-            // °æ¿ì 1 - ÇöÀç ÀúÀåµÈ ÅÏÀº ÆĞ¹èÀÎµ¥ »õ·Î °è»êµÈ ÅÏÀº ½Â¸®ÀÎ °æ¿ì
+            // ê²Œì„ì˜ íŠ¹ì§•ìƒ í„´ì„ 2ë¡œ ë‚˜ëˆ„ì—ˆì„ ë•Œ ìŠ¹ë¦¬í•˜ëŠ” í„´ì€ ë‚˜ë¨¸ì§€ê°€ 1ì¼ ë•Œì´ë‹¤.
+            // ê²½ìš° 1 - í˜„ì¬ ì €ì¥ëœ í„´ì€ íŒ¨ë°°ì¸ë° ìƒˆë¡œ ê³„ì‚°ëœ í„´ì€ ìŠ¹ë¦¬ì¸ ê²½ìš°
             if(expectedTurn % 2 == 0 && currentTurn % 2 == 1) {
-            	expectedTurn = currentTurn; // ½Â¸®ÇÏ´Â ÅÏÀ¸·Î Á¤º¸ °»½Å
+            	expectedTurn = currentTurn; // ìŠ¹ë¦¬í•˜ëŠ” í„´ìœ¼ë¡œ ì •ë³´ ê°±ì‹ 
             }
-            // °æ¿ì 2 - ÇöÀç ÀúÀåµÈ ÅÏ°ú »õ·Î °è»êµÈ ÅÏÀÌ ¸ğµÎ ÆĞ¹èÀÎ °æ¿ì
+            // ê²½ìš° 2 - í˜„ì¬ ì €ì¥ëœ í„´ê³¼ ìƒˆë¡œ ê³„ì‚°ëœ í„´ì´ ëª¨ë‘ íŒ¨ë°°ì¸ ê²½ìš°
             else if(expectedTurn % 2 == 0 && currentTurn % 2 == 0) {
-            	expectedTurn = Math.max(expectedTurn, currentTurn); // ÃÖ´ëÇÑ ´Ê°Ô Áö´Â°É ¼±ÅÃ
+            	expectedTurn = Math.max(expectedTurn, currentTurn); // ìµœëŒ€í•œ ëŠ¦ê²Œ ì§€ëŠ”ê±¸ ì„ íƒ
             }
-            // °æ¿ì 3 - ÇöÀç ÀúÀåµÈ ÅÏ°ú »õ·Î °è»êµÈ ÅÏÀÌ ¸ğµÎ ½Â¸®ÀÎ °æ¿ì
+            // ê²½ìš° 3 - í˜„ì¬ ì €ì¥ëœ í„´ê³¼ ìƒˆë¡œ ê³„ì‚°ëœ í„´ì´ ëª¨ë‘ ìŠ¹ë¦¬ì¸ ê²½ìš°
             else if(expectedTurn % 2 == 1 && currentTurn % 2 == 1) {
-            	expectedTurn = Math.min(expectedTurn, currentTurn); // ÃÖ´ëÇÑ »¡¸® ÀÌ±â´Â°É ¼±ÅÃ
+            	expectedTurn = Math.min(expectedTurn, currentTurn); // ìµœëŒ€í•œ ë¹¨ë¦¬ ì´ê¸°ëŠ”ê±¸ ì„ íƒ
             }
         }
         return expectedTurn;

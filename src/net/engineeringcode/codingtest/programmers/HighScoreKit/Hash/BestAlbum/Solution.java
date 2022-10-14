@@ -3,27 +3,27 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ÇØ½Ã > º£½ºÆ®¾Ù¹ü
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í•´ì‹œ > ë² ìŠ¤íŠ¸ì•¨ë²”
 	 * https://programmers.co.kr/learn/courses/30/lessons/42579
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ´õ ¸¹ÀÌ Àç»ıµÈ Àå¸£ºÎÅÍ ´õ ¸¹ÀÌ Àç»ıµÈ ³ë·¡¸¦ 2°³¾¿ ´ä¾È¿¡ ÀÔ·ÂÇÑ´Ù. ÇÑ Àå¸£¿¡ ³ë·¡°¡ ÇÏ³ª¸¸ ÀÖ´Â °æ¿ìµµ ÀÖ´Ù.
-	 * ¹®Á¦ÀÇ ¿ä±¸¿¡ µû¶ó Àå¸£¿Í ³ë·¡Á¤º¸¸¦ °¡°øÇÏ°í ÀûÀıÇÏ°Ô Á¤·ÄÇÏ´Â °ÍÀÌ Áß¿äÇÏ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë” ë§ì´ ì¬ìƒëœ ì¥ë¥´ë¶€í„° ë” ë§ì´ ì¬ìƒëœ ë…¸ë˜ë¥¼ 2ê°œì”© ë‹µì•ˆì— ì…ë ¥í•œë‹¤. í•œ ì¥ë¥´ì— ë…¸ë˜ê°€ í•˜ë‚˜ë§Œ ìˆëŠ” ê²½ìš°ë„ ìˆë‹¤.
+	 * ë¬¸ì œì˜ ìš”êµ¬ì— ë”°ë¼ ì¥ë¥´ì™€ ë…¸ë˜ì •ë³´ë¥¼ ê°€ê³µí•˜ê³  ì ì ˆí•˜ê²Œ ì •ë ¬í•˜ëŠ” ê²ƒì´ ì¤‘ìš”í•˜ë‹¤.
 	 */
 	
 	public int[] solution(String[] genres, int[] plays) {
 		HashMap<String, Genre> genreHashMap = new HashMap<>();
 		HashMap<String, ArrayList<Music>> musicHashMap = new HashMap<>();
 		
-		// Àå¸£º°·Î Àç»ı È½¼ö°¡ ´ã±ä À½¾Ç ¸ñ·ÏÀ» ÇØ½Ã¸ÊÀ¸·Î »ı¼º
+		// ì¥ë¥´ë³„ë¡œ ì¬ìƒ íšŸìˆ˜ê°€ ë‹´ê¸´ ìŒì•… ëª©ë¡ì„ í•´ì‹œë§µìœ¼ë¡œ ìƒì„±
 		for(int i=0;i<genres.length;i++) {
-			// Àå¸£ Á¤º¸ Ãß°¡
+			// ì¥ë¥´ ì •ë³´ ì¶”ê°€
 			if(genreHashMap.getOrDefault(genres[i], null) == null) {
 				genreHashMap.put(genres[i], new Genre(genres[i], 0, 0));
 			}
 			Genre genre = genreHashMap.get(genres[i]);
 			genreHashMap.put(genres[i], new Genre(genre.name, genre.playCount+plays[i], genre.musicCount+1));
 			
-			// Àå¸£¿¡ ³ë·¡ Á¤º¸ Ãß°¡
+			// ì¥ë¥´ì— ë…¸ë˜ ì •ë³´ ì¶”ê°€
 			if(musicHashMap.getOrDefault(genres[i], null) == null) {
 				musicHashMap.put(genres[i], new ArrayList<>());
 			}			
@@ -31,26 +31,26 @@ public class Solution {
 			musicListSameGenre.add(new Music(i, plays[i]));
 		}
 		
-		// Àå¸£ ¸ñ·ÏÀ» ÇÃ·¹ÀÌ ¼ö¿¡ µû¶ó ³»¸²Â÷¼ø Á¤·Ä
+		// ì¥ë¥´ ëª©ë¡ì„ í”Œë ˆì´ ìˆ˜ì— ë”°ë¼ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 		ArrayList<Genre> genreListSorted = new ArrayList<>();
 		for(String key:genreHashMap.keySet()) {
 			genreListSorted.add(genreHashMap.get(key));
 		}
 		Collections.sort(genreListSorted, Collections.reverseOrder());
 		
-		// ´õ ¸¹ÀÌ Àç»ıµÈ Àå¸£ºÎÅÍ ´õ ¸¹ÀÌ Àç»ıµÈ ³ë·¡¸¦ 2°³¾¿ ´ä¾È¿¡ ÀÔ·ÂÇÑ´Ù. ÇÑ Àå¸£¿¡ ³ë·¡°¡ ÇÏ³ª¸¸ ÀÖ´Â °æ¿ìµµ ÀÖ´Ù.
+		// ë” ë§ì´ ì¬ìƒëœ ì¥ë¥´ë¶€í„° ë” ë§ì´ ì¬ìƒëœ ë…¸ë˜ë¥¼ 2ê°œì”© ë‹µì•ˆì— ì…ë ¥í•œë‹¤. í•œ ì¥ë¥´ì— ë…¸ë˜ê°€ í•˜ë‚˜ë§Œ ìˆëŠ” ê²½ìš°ë„ ìˆë‹¤.
 		ArrayList<Integer> answerList = new ArrayList<>();
 		for(int i=0;i<genreHashMap.size();i++) {
-			// ³ë·¡ ¸ñ·ÏÀ» ÇÃ·¹ÀÌ ¼ö¿¡ µû¶ó ³»¸²Â÷¼ø Á¤·Ä
+			// ë…¸ë˜ ëª©ë¡ì„ í”Œë ˆì´ ìˆ˜ì— ë”°ë¼ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 			ArrayList<Music> musicListSameGenre = musicHashMap.get(genreListSorted.get(i).name);
 			Collections.sort(musicListSameGenre, Collections.reverseOrder());
-			// ´ä ¸®½ºÆ®¿¡ ÀÔ·Â
+			// ë‹µ ë¦¬ìŠ¤íŠ¸ì— ì…ë ¥
 			for(int j=0; j<musicListSameGenre.size() && j<2; j++) {
 				answerList.add(musicListSameGenre.get(j).id);
 			}
 		}
 		
-		// ¸®½ºÆ®¿¡ ´ã±ä ´äÀ» ¿ä±¸¿¡ µû¶ó int¹è¿­·Î °¡°ø
+		// ë¦¬ìŠ¤íŠ¸ì— ë‹´ê¸´ ë‹µì„ ìš”êµ¬ì— ë”°ë¼ intë°°ì—´ë¡œ ê°€ê³µ
 		int[] answer = new int[answerList.size()];
 		for(int i=0; i<answerList.size(); i++) {
 			answer[i] = answerList.get(i);
@@ -71,7 +71,7 @@ public class Solution {
 
 		@Override
 		public int compareTo(Genre genre) {
-			// Àå¸£ ³»¿¡¼­ ¸¹ÀÌ Àç»ıµÈ ³ë·¡¸¦ ¸ÕÀú ¼ö·ÏÇÕ´Ï´Ù.
+			// ì¥ë¥´ ë‚´ì—ì„œ ë§ì´ ì¬ìƒëœ ë…¸ë˜ë¥¼ ë¨¼ì € ìˆ˜ë¡í•©ë‹ˆë‹¤.
 			if (this.playCount < genre.playCount) {
 				return -1;
 			} else if (this.playCount == genre.playCount) {
@@ -93,7 +93,7 @@ public class Solution {
 
 		@Override
 		public int compareTo(Music music) {
-			// Àå¸£ ³»¿¡¼­ Àç»ı È½¼ö°¡ °°Àº ³ë·¡ Áß¿¡¼­´Â °íÀ¯ ¹øÈ£°¡ ³·Àº ³ë·¡¸¦ ¸ÕÀú ¼ö·ÏÇÕ´Ï´Ù.
+			// ì¥ë¥´ ë‚´ì—ì„œ ì¬ìƒ íšŸìˆ˜ê°€ ê°™ì€ ë…¸ë˜ ì¤‘ì—ì„œëŠ” ê³ ìœ  ë²ˆí˜¸ê°€ ë‚®ì€ ë…¸ë˜ë¥¼ ë¨¼ì € ìˆ˜ë¡í•©ë‹ˆë‹¤.
 			if (this.playCount < music.playCount) {
 				return -1;
 			} else if (this.playCount == music.playCount) {
@@ -129,7 +129,7 @@ public class Solution {
 			System.out.println("CASE 1 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		genres = new String[] {"classic", "pop", "classic", "classic"};
     	plays = new int[] {500, 1000, 100, 200};
     	answerCorrect = new int[]{1, 0, 3};
@@ -146,7 +146,7 @@ public class Solution {
 			System.out.println("CASE 2 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		genres = new String[] {"classic", "pop", "jpop", "classic"};
     	plays = new int[] {500, 1000, 100, 200};
     	answerCorrect = new int[]{1, 0, 3, 2};
@@ -163,7 +163,7 @@ public class Solution {
 			System.out.println("CASE 3 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		genres = new String[] {"classic"};
     	plays = new int[] {500};
     	answerCorrect = new int[]{0};

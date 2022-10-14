@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Á¤·Ä > °¡Àå Å« ¼ö
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì •ë ¬ > ê°€ìž¥ í° ìˆ˜
 	 * https://programmers.co.kr/learn/courses/30/lessons/42746
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ÁÖ¾îÁø ¼ýÀÚ·Î ¸¸µé ¼ö ÀÖ´Â °¡Àå Å« ¼ýÀÚ¸¦ Ã£´Â ¹®Á¦ÀÌ´Ù.
-	 * ¹è¿­À» ³»¸²Â÷¼ø Á¤·ÄÇÏ¿´´Ù. ÀÚ¸´¼ö¿¡ µû¸¥ ´ë¼Ò°ü°è Æ¯¼ºÀ» °í·ÁÇØ µÎ ÀÚ¸® ÀÌ»óÀÎ ¼ýÀÚ´Â °¡Àå ³ôÀº ÀÚ¸®ÀÇ ¼ýÀÚ¿Í ºñ±³ÇÏµµ·Ï ÇÏ¿´´Ù.
-	 * ºÒÇÊ¿äÇÑ ¿¬»êÀ» ÁÙÀÌ±â À§ÇØ °¡Àå Å« ¼öÀÇ Á¦ÀÏ ¾ÕÀÚ¸®°¡ 0ÀÌ¸é´Â 0À¸·Î Ã³¸®ÇÏ´Â ¹æ¹ýÀ» Solution3¿¡¼­ ´Ù·ç¾ú´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì£¼ì–´ì§„ ìˆ«ìžë¡œ ë§Œë“¤ ìˆ˜ ìžˆëŠ” ê°€ìž¥ í° ìˆ«ìžë¥¼ ì°¾ëŠ” ë¬¸ì œì´ë‹¤.
+	 * ë°°ì—´ì„ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬í•˜ì˜€ë‹¤. ìžë¦¿ìˆ˜ì— ë”°ë¥¸ ëŒ€ì†Œê´€ê³„ íŠ¹ì„±ì„ ê³ ë ¤í•´ ë‘ ìžë¦¬ ì´ìƒì¸ ìˆ«ìžëŠ” ê°€ìž¥ ë†’ì€ ìžë¦¬ì˜ ìˆ«ìžì™€ ë¹„êµí•˜ë„ë¡ í•˜ì˜€ë‹¤.
+	 * ë¶ˆí•„ìš”í•œ ì—°ì‚°ì„ ì¤„ì´ê¸° ìœ„í•´ ê°€ìž¥ í° ìˆ˜ì˜ ì œì¼ ì•žìžë¦¬ê°€ 0ì´ë©´ëŠ” 0ìœ¼ë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•ì„ Solution3ì—ì„œ ë‹¤ë£¨ì—ˆë‹¤.
 	 */
 	
 	public String solution(int[] numbers) {

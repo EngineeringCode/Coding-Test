@@ -3,27 +3,27 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > 2022 Ä«Ä«¿À ºí¶óÀÎµå Ã¤¿ë > ½Å°í °á°ú ¹Ş±â
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > 2022 ì¹´ì¹´ì˜¤ ë¸”ë¼ì¸ë“œ ì±„ìš© > ì‹ ê³  ê²°ê³¼ ë°›ê¸°
 	 * https://programmers.co.kr/learn/courses/30/lessons/92343
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 * 
 	 */ 
     public int[] solution(String[] id_list, String[] report, int k) {   
-        // »ç¿ëÀÚ¸í°ú »ç¿ëÀÚ°¡ ÀÌ¸ŞÀÏÀ» ¹ŞÀº È½¼ö¸¦ ´ã°í ÀÖ´Â ÇØ½Ã¸ÊÀ» »ı¼ºÇÑ´Ù. ÀüÃ¼¸¦ ¼øÈ¸ÇÏ´Â °ÍÀ» ¸·±â À§ÇÔ.
+        // ì‚¬ìš©ìëª…ê³¼ ì‚¬ìš©ìê°€ ì´ë©”ì¼ì„ ë°›ì€ íšŸìˆ˜ë¥¼ ë‹´ê³  ìˆëŠ” í•´ì‹œë§µì„ ìƒì„±í•œë‹¤. ì „ì²´ë¥¼ ìˆœíšŒí•˜ëŠ” ê²ƒì„ ë§‰ê¸° ìœ„í•¨.
         HashMap<String, Integer> userMap = new HashMap<>();
         for(int i=0;i<id_list.length;i++){
             userMap.put(id_list[i], 0);
         }        
         //System.out.println(userMap);
         
-        // ÀÎÀÚ·Î Àü´Ş ¹ŞÀº º¸°í¼­¿¡ Áßº¹À» Á¦°ÅÇÑ´Ù.
+        // ì¸ìë¡œ ì „ë‹¬ ë°›ì€ ë³´ê³ ì„œì— ì¤‘ë³µì„ ì œê±°í•œë‹¤.
         HashSet<String> reportSet = new HashSet<String>();
         for(String re:report){
             reportSet.add(re);
         }
         //System.out.println(reportSet);
         
-        // º¸°í¼­¸¦ ÇØ½Ã¸ÊÀ¸·Î °¡°øÇÑ´Ù.
+        // ë³´ê³ ì„œë¥¼ í•´ì‹œë§µìœ¼ë¡œ ê°€ê³µí•œë‹¤.
         HashMap<String, StringBuilder> reportMap = new HashMap<>();
         //HashMap<String, String> reportMap = new HashMap<>();
         for(String re:reportSet){
@@ -42,7 +42,7 @@ public class Solution {
             System.out.println("abuser:"+abuser+" reporters:"+reporters);
             */
             
-            // StringBuilder°¡ ÃÊ±âÈ­ µÇ¾î ÀÖÁö ¾Ê´Ù¸é ÃÊ±âÈ­
+            // StringBuilderê°€ ì´ˆê¸°í™” ë˜ì–´ ìˆì§€ ì•Šë‹¤ë©´ ì´ˆê¸°í™”
             if(reportMap.getOrDefault(abuser, null)==null){
                 reportMap.put(abuser, new StringBuilder());
                 reportMap.get(abuser).setLength(0);
@@ -59,7 +59,7 @@ public class Solution {
             //System.out.println("abuser:"+abuser+" stringBuilder:"+stringBuilder);
         }
         
-        // 2¹ø ÀÌ»ó ½Å°íµÈ °èÁ¤À» Ã£°í ½Å°íÇÑ »ç¿ëÀÚ¿¡°Ô Á¤ÁöµÈ °ÍÀ» ¾Ë¸°´Ù. ¾Ë¸®¸é È½¼ö¸¦ Áõ°¡½ÃÅ²´Ù.
+        // 2ë²ˆ ì´ìƒ ì‹ ê³ ëœ ê³„ì •ì„ ì°¾ê³  ì‹ ê³ í•œ ì‚¬ìš©ìì—ê²Œ ì •ì§€ëœ ê²ƒì„ ì•Œë¦°ë‹¤. ì•Œë¦¬ë©´ íšŸìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¨ë‹¤.
         for(String key:reportMap.keySet()){
             StringBuilder stringBuilder = reportMap.get(key);
             //System.out.println(stringBuilder.toString());
@@ -70,7 +70,7 @@ public class Solution {
             String[] reporters = stringValue.split(" ");
             */
             if(reporters.length>=k){
-                // ½Å°íµÈ °èÁ¤À» Á¤Áö½ÃÅ°°í ÀÌ¸ŞÀÏ·Î Á¤Áö ³»¿ëÀ» ½Å°íÀÚ¿¡°Ô ¾Ë¸°´Ù.
+                // ì‹ ê³ ëœ ê³„ì •ì„ ì •ì§€ì‹œí‚¤ê³  ì´ë©”ì¼ë¡œ ì •ì§€ ë‚´ìš©ì„ ì‹ ê³ ìì—ê²Œ ì•Œë¦°ë‹¤.
                 for(String reporter: reporters){
                     int emailCount = userMap.get(reporter);
                     userMap.put(reporter, emailCount+1);

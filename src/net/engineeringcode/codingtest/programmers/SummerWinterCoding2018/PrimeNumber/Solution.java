@@ -2,10 +2,10 @@ package net.engineeringcode.codingtest.programmers.SummerWinterCoding2018.PrimeN
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Summer/Winter Coding(~2018) > ¼Ò¼ö ¸¸µé±â
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > Summer/Winter Coding(~2018) > ì†Œìˆ˜ ë§Œë“¤ê¸°
 	 * https://programmers.co.kr/learn/courses/30/lessons/12977
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÀÔ·ÂÀÇ °³¼ö¿Í ÀÚ¿¬¼ö ¹üÀ§°¡ ÀÛÀ¸¹Ç·Î ¿ÏÀü Å½»öÀ¸·Î ºü¸£°Ô ´äÀ» ÀÛ¼ºÇÏ´Â °ÍÀÌ À¯¸®ÇÕ´Ï´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì…ë ¥ì˜ ê°œìˆ˜ì™€ ìì—°ìˆ˜ ë²”ìœ„ê°€ ì‘ìœ¼ë¯€ë¡œ ì™„ì „ íƒìƒ‰ìœ¼ë¡œ ë¹ ë¥´ê²Œ ë‹µì„ ì‘ì„±í•˜ëŠ” ê²ƒì´ ìœ ë¦¬í•©ë‹ˆë‹¤.
 	 */
 
 	public int solution(int[] nums) {

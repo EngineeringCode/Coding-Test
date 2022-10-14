@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Å½¿å¹ı(Greedy) > Å« ¼ö ¸¸µé±â
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > íƒìš•ë²•(Greedy) > í° ìˆ˜ ë§Œë“¤ê¸°
 	 * https://programmers.co.kr/learn/courses/30/lessons/42883
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * Á¶ÇÕÀ¸·Î Ç®¾îº¸ÀÚ
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì¡°í•©ìœ¼ë¡œ í’€ì–´ë³´ì
 	 */
 	
 	public String solution(String number, int k) {

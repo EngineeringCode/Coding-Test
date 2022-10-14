@@ -3,17 +3,17 @@ import java.util.*;
 
 public class Solution4 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ÇØ½Ã > ÀüÈ­¹øÈ£
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í•´ì‹œ > ì „í™”ë²ˆí˜¸
 	 * https://programmers.co.kr/learn/courses/30/lessons/42577
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ¹®Á¦ÀÇ Áö¹®À» ÀÌÇØÇÏ´Â °Í¿¡ ½Ã°£ÀÌ ¿À·¡ °É·È´Ù. ¹øÈ£µé Áß¿¡ ÇÏ³ª¶óµµ ´Ù¸¥ »ç¶÷ÀÇ ¹øÈ£¿¡¼­ ½ÃÀÛÇÏ´Â °°Àº °æ¿ì°¡ ÀÖÀ¸¸é false¶ó´Â ¸»ÀÌ´Ù.
-	 * '¹øÈ£¿¡¼­ ½ÃÀÛÇÏ´Â'À» ÀÌ¿ëÇÏ¸é Á¤·Ä·Î ÇØ°áÇÒ ¼ö ÀÖ´Ù. ÇØ½Ã·Î °¡°øÇÏ´Â °Í ´ëºñ ¸Þ¸ð¸®¸¦ Àý¾àÇÒ ¼ö ÀÖ´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë¬¸ì œì˜ ì§€ë¬¸ì„ ì´í•´í•˜ëŠ” ê²ƒì— ì‹œê°„ì´ ì˜¤ëž˜ ê±¸ë ¸ë‹¤. ë²ˆí˜¸ë“¤ ì¤‘ì— í•˜ë‚˜ë¼ë„ ë‹¤ë¥¸ ì‚¬ëžŒì˜ ë²ˆí˜¸ì—ì„œ ì‹œìž‘í•˜ëŠ” ê°™ì€ ê²½ìš°ê°€ ìžˆìœ¼ë©´ falseë¼ëŠ” ë§ì´ë‹¤.
+	 * 'ë²ˆí˜¸ì—ì„œ ì‹œìž‘í•˜ëŠ”'ì„ ì´ìš©í•˜ë©´ ì •ë ¬ë¡œ í•´ê²°í•  ìˆ˜ ìžˆë‹¤. í•´ì‹œë¡œ ê°€ê³µí•˜ëŠ” ê²ƒ ëŒ€ë¹„ ë©”ëª¨ë¦¬ë¥¼ ì ˆì•½í•  ìˆ˜ ìžˆë‹¤.
 	 */
 	
     public boolean solution(String[] phone_book) {
-    	// ¿À¸§Â÷¼øÀ¸·Î ÀüÈ­¹øÈ£ ¹è¿­À» Á¤·Ä
+    	// ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì „í™”ë²ˆí˜¸ ë°°ì—´ì„ ì •ë ¬
     	Arrays.sort(phone_book);
-    	// ÇØ´ç ÀÎµ¦½ºÀÇ ´ÙÀ½ ÀÎµ¦½º¿¡ ÇØ´ç ÀÎµ¦½ºÀÇ °ª(ÀüÈ­¹øÈ£)À¸·Î ½ÃÀÛÇÏ´ÂÁö È®ÀÎ
+    	// í•´ë‹¹ ì¸ë±ìŠ¤ì˜ ë‹¤ìŒ ì¸ë±ìŠ¤ì— í•´ë‹¹ ì¸ë±ìŠ¤ì˜ ê°’(ì „í™”ë²ˆí˜¸)ìœ¼ë¡œ ì‹œìž‘í•˜ëŠ”ì§€ í™•ì¸
     	for(int i=0; i<phone_book.length-1; i++) {
     		if(phone_book[i+1].startsWith(phone_book[i])) {
     			return false;

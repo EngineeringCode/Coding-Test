@@ -3,21 +3,21 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Å½¿å¹ý(Greedy) > Ã¼À°º¹
-	 * ¹®Á¦ ÁÖ¼Ò: https://programmers.co.kr/learn/courses/30/lessons/42862
-	 * ÇØ¼³ ÁÖ¼Ò: https://engineeringcode.tistory.com/237
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ³»¿ëÀº °£´ÜÇÏ³ª Á¶°ÇÀÌ ´Ù¼Ò ±î´Ù·Ó°í Á¤È®ÇÏ°Ô ¹àÈ÷Áö ¾ÊÀº Á¶°Ç ¶§¹®¿¡ Å×½ºÆ® ÄÉÀÌ½º¸¦ Åë°úÇÏÁö ¸ø ÇÏ´Â °æ¿ì°¡ ÀÖ½À´Ï´Ù.
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > íƒìš•ë²•(Greedy) > ì²´ìœ¡ë³µ
+	 * ë¬¸ì œ ì£¼ì†Œ: https://programmers.co.kr/learn/courses/30/lessons/42862
+	 * í•´ì„¤ ì£¼ì†Œ: https://engineeringcode.tistory.com/237
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë‚´ìš©ì€ ê°„ë‹¨í•˜ë‚˜ ì¡°ê±´ì´ ë‹¤ì†Œ ê¹Œë‹¤ë¡­ê³  ì •í™•í•˜ê²Œ ë°ížˆì§€ ì•Šì€ ì¡°ê±´ ë•Œë¬¸ì— í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ë¥¼ í†µê³¼í•˜ì§€ ëª» í•˜ëŠ” ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤.
 	 */
 	
 	public int solution(int n, int[] lost, int[] reserve) {
         int answer = n-lost.length;
         
-        // ¾Õ¹øÈ£ÀÇ ÇÐ»ý¿¡°Ô ¸ÕÀú ºô¸®µµ·Ï ¸¸µé¾î¾ß ÇÁ·Î±×·¡¸Ó½º Ã¤Á¡À» Åë°úÇÑ´Ù.
+        // ì•žë²ˆí˜¸ì˜ í•™ìƒì—ê²Œ ë¨¼ì € ë¹Œë¦¬ë„ë¡ ë§Œë“¤ì–´ì•¼ í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ ì±„ì ì„ í†µê³¼í•œë‹¤.
         Arrays.sort(lost);
         Arrays.sort(reserve);
         
-        // ¿©¹úÀ» °¡Á®¿Â »ç¶÷ÀÌ µµ³­ ´çÇÑ °æ¿ì¿¡ Ã¼À°º¹À» ¸ø ºô·ÁÁÖµµ·Ï ¼öÁ¤.
+        // ì—¬ë²Œì„ ê°€ì ¸ì˜¨ ì‚¬ëžŒì´ ë„ë‚œ ë‹¹í•œ ê²½ìš°ì— ì²´ìœ¡ë³µì„ ëª» ë¹Œë ¤ì£¼ë„ë¡ ìˆ˜ì •.
         for(int i=0;i<lost.length;i++) {
         	for(int j=0;j<reserve.length;j++) {
         		if(reserve[j]==lost[i]) {
@@ -28,7 +28,7 @@ public class Solution {
         		}
         	}
         }
-        // µµ³­ ´çÇÑ »ç¶÷ÀÌ ¿©¹úÀ» °¡Á®¿Â »ç¶÷¿¡°Ô ºô¸°´Ù.
+        // ë„ë‚œ ë‹¹í•œ ì‚¬ëžŒì´ ì—¬ë²Œì„ ê°€ì ¸ì˜¨ ì‚¬ëžŒì—ê²Œ ë¹Œë¦°ë‹¤.
         for(int i=0;i<lost.length;i++) {
         	for(int j=0;j<reserve.length;j++) {
         		if(reserve[j]==lost[i]-1 || reserve[j]==lost[i]+1) {
@@ -97,7 +97,7 @@ public class Solution {
 			System.out.println("CASE 3 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ ì¼€ì´ìŠ¤
 		n = 7;
     	lost = new int[] {3, 5};
     	reserve = new int[] {3, 6};

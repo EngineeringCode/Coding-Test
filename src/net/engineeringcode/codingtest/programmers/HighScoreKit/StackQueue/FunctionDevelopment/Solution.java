@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ½ºÅÃ/Å¥ > ±â´É°³¹ß
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ìŠ¤íƒ/í > ê¸°ëŠ¥ê°œë°œ
 	 * https://programmers.co.kr/learn/courses/30/lessons/42586
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
 	 */
     public int[] solution(int[] progresses, int[] speeds) {
         int totalWorkCount = progresses.length;
@@ -16,11 +16,11 @@ public class Solution {
         
         while(true){
             todaysDeployedWorkCount = 0;
-            // ´Ù ¹èÆ÷ÇßÀ¸¸é ¹İº¹À» ±×¸¸(Å»Ãâ)ÇÑ´Ù.
+            // ë‹¤ ë°°í¬í–ˆìœ¼ë©´ ë°˜ë³µì„ ê·¸ë§Œ(íƒˆì¶œ)í•œë‹¤.
             if(totalDeplyedWorkCount >= totalWorkCount){
                 break;
             }
-            // ¾îÁ¦ ÁøÃ´µµ¿¡ ¿À´Ã ÁøÇà·®À» ´õÇÑ´Ù.
+            // ì–´ì œ ì§„ì²™ë„ì— ì˜¤ëŠ˜ ì§„í–‰ëŸ‰ì„ ë”í•œë‹¤.
             for(int i=0;i<totalWorkCount;i++){
             	if(progresses[i] == -1 || progresses[i] == -2) {
             		continue;
@@ -31,16 +31,16 @@ public class Solution {
                     progresses[i] = -1;
                 }
             }
-            // ÀÛ¾÷ÀÌ ¿Ï·áµÈ °ÍÀÌ ÀÖ´ÂÁö È®ÀÎÇÑ´Ù.
+            // ì‘ì—…ì´ ì™„ë£Œëœ ê²ƒì´ ìˆëŠ”ì§€ í™•ì¸í•œë‹¤.
             for(int i=0;i<totalWorkCount;i++){
-                if( (progresses[i] == -1) && (nextDeployedIndex == i) ){ // ÀÌ ÀÛ¾÷ÀÌ ¹èÆ÷µÇ´Â ¼ø¼­¶ó¸é ¹èÆ÷ÇÑ´Ù.
+                if( (progresses[i] == -1) && (nextDeployedIndex == i) ){ // ì´ ì‘ì—…ì´ ë°°í¬ë˜ëŠ” ìˆœì„œë¼ë©´ ë°°í¬í•œë‹¤.
                 	//System.out.println("progresses["+i+"] is Deployed.");
                 	todaysDeployedWorkCount++;
                     progresses[i] = -2;
                     nextDeployedIndex++; 
                 }
             }
-            // ¿À´Ã ¹èÆ÷ÇÑ ÀÛ¾÷ÀÌ ÀÖ´ÂÁö È®ÀÎÇÑ´Ù.
+            // ì˜¤ëŠ˜ ë°°í¬í•œ ì‘ì—…ì´ ìˆëŠ”ì§€ í™•ì¸í•œë‹¤.
             if(todaysDeployedWorkCount>0) {
                 //System.out.println(todaysDeployedWorkCount+" is(are) Deployed.");
                 totalDeplyedWorkCount += todaysDeployedWorkCount;
@@ -50,7 +50,7 @@ public class Solution {
         }
         
         int[] answer = new int[deployedCountList.size()];
-        // ¹èÆ÷Çß´ø °¹¼ö¸¦ ¼ø¼­´ë·Î ´ä¾È¿¡ ÀÔ·ÂÇÑ´Ù.
+        // ë°°í¬í–ˆë˜ ê°¯ìˆ˜ë¥¼ ìˆœì„œëŒ€ë¡œ ë‹µì•ˆì— ì…ë ¥í•œë‹¤.
         for(int i=0;i<answer.length;i++){
             answer[i] = deployedCountList.poll();
         }

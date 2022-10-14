@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Á¤·Ä > °¡Àå Å« ¼ö
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì •ë ¬ > ê°€ìž¥ í° ìˆ˜
 	 * https://programmers.co.kr/learn/courses/30/lessons/42746
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ÁÖ¾îÁø ¼ýÀÚ·Î ¸¸µé ¼ö ÀÖ´Â °¡Àå Å« ¼ýÀÚ¸¦ Ã£´Â ¹®Á¦ÀÌ´Ù.
-	 * ¼ø¿­·Î Ã£´Â ¹æ¹ýÀ¸·Î Ç®¾îº¸¾ÒÁö¸¸ Á¤È®¼º Å×½ºÆ®¿¡¼­ ½Ã°£ÃÊ°ú·Î ½ÇÆÐÇÑ´Ù.
-	 * Solution2¿¡ ÇØ°áÇÑ ¹æ¹ýÀÌ ÀÖ´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì£¼ì–´ì§„ ìˆ«ìžë¡œ ë§Œë“¤ ìˆ˜ ìžˆëŠ” ê°€ìž¥ í° ìˆ«ìžë¥¼ ì°¾ëŠ” ë¬¸ì œì´ë‹¤.
+	 * ìˆœì—´ë¡œ ì°¾ëŠ” ë°©ë²•ìœ¼ë¡œ í’€ì–´ë³´ì•˜ì§€ë§Œ ì •í™•ì„± í…ŒìŠ¤íŠ¸ì—ì„œ ì‹œê°„ì´ˆê³¼ë¡œ ì‹¤íŒ¨í•œë‹¤.
+	 * Solution2ì— í•´ê²°í•œ ë°©ë²•ì´ ìžˆë‹¤.
 	 */
 	
     String maximumNumber = "0";

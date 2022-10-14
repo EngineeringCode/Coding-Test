@@ -3,19 +3,19 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Å½¿å¹ı(Greedy) > Å« ¼ö ¸¸µé±â
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > íƒìš•ë²•(Greedy) > í° ìˆ˜ ë§Œë“¤ê¸°
 	 * https://programmers.co.kr/learn/courses/30/lessons/42883
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ¼öÀÇ À§Ä¡(ÀÚ¸®)ÀÌµ¿Àº ºÒ°¡´ÉÇÏ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ìˆ˜ì˜ ìœ„ì¹˜(ìë¦¬)ì´ë™ì€ ë¶ˆê°€ëŠ¥í•˜ë‹¤.
 	 */
 	
 	public String solution(String number, int k) {
 		StringBuilder stringBuilder = new StringBuilder();
 		int lastIndex = -1;
 		
-        for(int i=0;i<number.length()-k;i++) { // Å½»öÇØ¾ßÇÏ´Â ÃÖ´ë °Å¸®´Â number.length()-kÀÌ´Ù.
+        for(int i=0;i<number.length()-k;i++) { // íƒìƒ‰í•´ì•¼í•˜ëŠ” ìµœëŒ€ ê±°ë¦¬ëŠ” number.length()-kì´ë‹¤.
         	int maximumNumber = 0;
-        	for(int j=lastIndex+1; j<=i+k; j++) { // ÀÚ¸¦ ¼ö ÀÖ´Â ÃÖ´ë ¹üÀ§´Â i+k ÀÌ´Ù.
+        	for(int j=lastIndex+1; j<=i+k; j++) { // ìë¥¼ ìˆ˜ ìˆëŠ” ìµœëŒ€ ë²”ìœ„ëŠ” i+k ì´ë‹¤.
         		if(maximumNumber < number.charAt(j)-'0') {
         			maximumNumber = number.charAt(j)-'0';
         			lastIndex = j;

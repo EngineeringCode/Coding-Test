@@ -3,23 +3,23 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ���α׷��ӽ� > �ڵ��׽�Ʈ ���� > �ؽ� > ��ȭ��ȣ
+	 * 프로그래머스 > 코딩테스트 연습 > 해시 > 전화번호
 	 * https://programmers.co.kr/learn/courses/30/lessons/42577
-	 * �ۼ���: �����ڵ�(engineeringcode93@gmail.com)
-	 * ������ ������ �����ϴ� �Ϳ� �ð��� ���� �ɷȴ�. ��ȣ�� �߿� �ϳ��� �ٸ� ����� ��ȣ���� �����ϴ� ���� ��찡 ������ false��� ���̴�.
-	 * ��ȭ��ȣ�� ��� ��츦 �ؽøʿ� �־ Ǯ���µ� �̷��� �ؽø��� ��������� ������ �ִ�.
-	 * �̸� �ذ��� ����� Solution3�� �ִ�.
+	 * 작성자: 공학코드(engineeringcode93@gmail.com)
+	 * 문제의 지문을 이해하는 것에 시간이 오래 걸렸다. 번호들 중에 하나라도 다른 사람의 번호에서 시작하는 같은 경우가 있으면 false라는 말이다.
+	 * 전화번호의 모든 경우를 해시맵에 넣어서 풀었는데 이러면 해시맵이 비대해지는 문제가 있다.
+	 * 이를 해결한 방법은 Solution3에 있다.
 	 */
 	
     public boolean solution(String[] phone_book) {
-    	// ��ȭ��ȣ�� ��� ��츦 �ؽø����� ����
+    	// 전화번호의 모든 경우를 해시맵으로 가공
     	HashMap<String, Boolean> stringList = new HashMap<>();
     	for(int i=0; i<phone_book.length; i++) {
     		for(int j=0;j<phone_book[i].length(); j++) {
     			stringList.put(phone_book[i].substring(0, j), false);
     		}
     	}
-    	// �ش� ��ȭ��ȣ�� �����ϴ� ��ȭ��ȣ�� �ִ��� Ȯ��
+    	// 해당 전화번호로 시작하는 전화번호가 있는지 확인
     	for(int i=0; i<phone_book.length; i++) {
     		if(stringList.getOrDefault(phone_book[i], null) != null) {
     			return false;

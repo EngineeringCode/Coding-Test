@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Èü > ÀÌÁß¿ì¼±¼øÀ§Å¥
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > íž™ > ì´ì¤‘ìš°ì„ ìˆœìœ„í
 	 * https://programmers.co.kr/learn/courses/30/lessons/42628
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ÁÖ¾îÁø ¸í·É¿¡ µû¶ó °ªÀ» »ðÀÔ ÈÄ Á¤·ÄÇÏ°Å³ª ÃÖ´ë°ª°ú ÃÖ¼Ò°ªÀ» »èÁ¦ÇÏ´Â µ¿ÀÛÀ» ¼öÇàÇÏ¸é µÈ´Ù.
-	 * ÀÚ¹Ù¿¡¼­´Â LinkedList ±¸ÇöÃ¼¸¦ È°¿ëÇÏ¸é ½±°Ô ¹®Á¦¸¦ Ç® ¼ö ÀÖ´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì£¼ì–´ì§„ ëª…ë ¹ì— ë”°ë¼ ê°’ì„ ì‚½ìž… í›„ ì •ë ¬í•˜ê±°ë‚˜ ìµœëŒ€ê°’ê³¼ ìµœì†Œê°’ì„ ì‚­ì œí•˜ëŠ” ë™ìž‘ì„ ìˆ˜í–‰í•˜ë©´ ëœë‹¤.
+	 * ìžë°”ì—ì„œëŠ” LinkedList êµ¬í˜„ì²´ë¥¼ í™œìš©í•˜ë©´ ì‰½ê²Œ ë¬¸ì œë¥¼ í’€ ìˆ˜ ìžˆë‹¤.
 	 */
 	
     public int[] solution(String[] operations) {

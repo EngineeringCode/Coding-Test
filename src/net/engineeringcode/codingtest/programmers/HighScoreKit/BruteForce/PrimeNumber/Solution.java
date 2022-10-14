@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ¿ÏÀüÅ½»ö > ¼Ò¼ö Ã£±â
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì™„ì „íƒìƒ‰ > ì†Œìˆ˜ ì°¾ê¸°
 	 * https://programmers.co.kr/learn/courses/30/lessons/42839
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÁÖ¾îÁø ¹øÈ£µé·Î ¼ø¿­À» ¸¸µé ¶§ ¼Ò¼öÀÇ °³¼ö¸¦ ±¸ÇÏ´Â ¹®Á¦ÀÌ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì£¼ì–´ì§„ ë²ˆí˜¸ë“¤ë¡œ ìˆœì—´ì„ ë§Œë“¤ ë•Œ ì†Œìˆ˜ì˜ ê°œìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë¬¸ì œì´ë‹¤.
 	 */
 	
 	int answer = -1;
@@ -17,18 +17,18 @@ public class Solution {
 		answer = 0;
 		combinationHashMap = new HashMap<>();
 		
-		// ÁÖ¾îÁø ¼ıÀÚ¸¦ ¹è¿­·Î °¡°ø
+		// ì£¼ì–´ì§„ ìˆ«ìë¥¼ ë°°ì—´ë¡œ ê°€ê³µ
 		numberStringArray = numbers.split("");
 		String[] output = new String[numberStringArray.length];
 		
-		// ÁÖ¾îÁø ¼ıÀÚ·Î ¼ø¿­ »ı¼º
+		// ì£¼ì–´ì§„ ìˆ«ìë¡œ ìˆœì—´ ìƒì„±
 		boolean[] visited = new boolean[numberStringArray.length];
 		for(int r = 1; r <= numberStringArray.length; r++) {
 			permutation(numberStringArray, output, visited, 0, numberStringArray.length, r);
 		}		
 		//System.out.println("combinationHashMap.size():"+combinationHashMap.size());
 		
-		// »ı¼ºµÈ ¼ø¿­ Áß¿¡ ¼Ò¼ö°¡ ¸î°³ ÀÖ´ÂÁö È®ÀÎÇÑ´Ù.
+		// ìƒì„±ëœ ìˆœì—´ ì¤‘ì— ì†Œìˆ˜ê°€ ëª‡ê°œ ìˆëŠ”ì§€ í™•ì¸í•œë‹¤.
 		for(Integer key: combinationHashMap.keySet()) {
 			//System.out.println("key:"+key);
 			if(isPrimeNumber(key)) {

@@ -2,10 +2,10 @@ package net.engineeringcode.codingtest.Kakao2022BlindRecruitment.Building;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > 2022 Ä«Ä«¿À ºí¶óÀÎµå Ã¤¿ë > ÆÄ±«µÇÁö ¾ÊÀº °Ç¹°
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > 2022 ì¹´ì¹´ì˜¤ ë¸”ë¼ì¸ë“œ ì±„ìš© > íŒŒê´´ë˜ì§€ ì•Šì€ ê±´ë¬¼
 	 * https://programmers.co.kr/learn/courses/30/lessons/92344
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÏ±â À§ÇØ ´©ÀûÇÕÀ» Àû¿ëÇÑ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•˜ê¸° ìœ„í•´ ëˆ„ì í•©ì„ ì ìš©í•œë‹¤.
 	 */
     
     public int solution(int[][] board, int[][] skill) {
@@ -14,12 +14,12 @@ public class Solution2 {
     	
     	int[][] prefixSum = new int[board.length+2][board.length+2];
     	
-    	// ½ºÅ³À» ¼ø¼­´ë·Î ´©ÀûÇÕ¿¡ ÀúÀåÇÑ´Ù.
+    	// ìŠ¤í‚¬ì„ ìˆœì„œëŒ€ë¡œ ëˆ„ì í•©ì— ì €ì¥í•œë‹¤.
     	for(int i=0;i<skill.length;i++) {
     		int action[] = skill[i];
     		
-    		int type = 1; // ¹æ¾î(Ä¡·á)
-    		if(action[0]==1){ // °ø°İ
+    		int type = 1; // ë°©ì–´(ì¹˜ë£Œ)
+    		if(action[0]==1){ // ê³µê²©
     			type = -1;
     		}
     		int r1 = action[1];
@@ -34,13 +34,13 @@ public class Solution2 {
     		prefixSum[r2+1][c2+1] += type*degree;
     	}
     	
-    	// °¡·Î·Î ´©ÀûÇÕ
+    	// ê°€ë¡œë¡œ ëˆ„ì í•©
     	for(int x=1; x<board.length; x++) {
     		for(int y=0; y<board[0].length; y++) {
     			prefixSum[x][y] += prefixSum[x-1][y];
     		}
     	}
-    	// ¼¼·Î·Î ´©ÀûÇÕ
+    	// ì„¸ë¡œë¡œ ëˆ„ì í•©
     	for(int x=0; x<board.length; x++) {
     		for(int y=1; y<board[0].length; y++) {
     			prefixSum[x][y] += prefixSum[x][y-1];
@@ -48,12 +48,12 @@ public class Solution2 {
     	}
     	
     	/*
-    	// µğ¹ö±ë¿ë °Ç¹° Ãâ·Â
+    	// ë””ë²„ê¹…ìš© ê±´ë¬¼ ì¶œë ¥
     	System.out.println("======= board =========");
     	for(int[] sum:board) {
     		System.out.println(Arrays.toString(sum));
     	}
-    	// µğ¹ö±ë¿ë ´©ÀûÇÕ Ãâ·Â
+    	// ë””ë²„ê¹…ìš© ëˆ„ì í•© ì¶œë ¥
     	System.out.println("=======Prefix Sum=========");
     	for(int[] sum:prefixSum) {
     		System.out.println(Arrays.toString(sum));
@@ -63,7 +63,7 @@ public class Solution2 {
     	
     	int answer = 0;
     	
-    	// ¾È ºÎ¼­Áø °Ç¹°ÀÇ ¼ö¸¦ ¼¾´Ù.
+    	// ì•ˆ ë¶€ì„œì§„ ê±´ë¬¼ì˜ ìˆ˜ë¥¼ ì„¼ë‹¤.
 		for(int x=0;x<board.length;x++) {
 			for(int y=0;y<board[0].length;y++) {
 				if( (board[x][y]+prefixSum[x][y]) > 0) {

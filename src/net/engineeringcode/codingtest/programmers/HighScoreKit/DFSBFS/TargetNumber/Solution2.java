@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ±íÀÌ/³Êºñ ¿ì¼± Å½»ö(DFS/BFS) > Å¸°Ù ³Ñ¹ö
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ê¹Šì´/ë„ˆë¹„ ìš°ì„  íƒìƒ‰(DFS/BFS) > íƒ€ê²Ÿ ë„˜ë²„
 	 * https://programmers.co.kr/learn/courses/30/lessons/43165
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * Ã³À½ ¼ýÀÚºÎÅÍ ¸¶Áö¸· ¼ýÀÚ±îÁö ´õÇÏ°Å³ª »©´Â ¸ðµç °æ¿ìÀÇ ¼ö¸¦ °è»êÇØ¾ßÇÏ´Â ¹®Á¦ÀÌ¹Ç·Î DFS(Depth-first search)·Î Çª´Â °ÍÀÌ ÀûÀýÇÕ´Ï´Ù.
-	 * DFSÀÇ ½Ã°£º¹Àâµµ´Â BFS(Breadth-First Search)¶û °°Áö¸¸ °ø°£º¹Àâµµ Ãø¸é¿¡¼­ BFSº¸´Ù ÈÎ¾À ÀÛ´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì²˜ìŒ ìˆ«ìžë¶€í„° ë§ˆì§€ë§‰ ìˆ«ìžê¹Œì§€ ë”í•˜ê±°ë‚˜ ë¹¼ëŠ” ëª¨ë“  ê²½ìš°ì˜ ìˆ˜ë¥¼ ê³„ì‚°í•´ì•¼í•˜ëŠ” ë¬¸ì œì´ë¯€ë¡œ DFS(Depth-first search)ë¡œ í‘¸ëŠ” ê²ƒì´ ì ì ˆí•©ë‹ˆë‹¤.
+	 * DFSì˜ ì‹œê°„ë³µìž¡ë„ëŠ” BFS(Breadth-First Search)ëž‘ ê°™ì§€ë§Œ ê³µê°„ë³µìž¡ë„ ì¸¡ë©´ì—ì„œ BFSë³´ë‹¤ í›¨ì”¬ ìž‘ë‹¤.
 	 */
 
 	int answer;

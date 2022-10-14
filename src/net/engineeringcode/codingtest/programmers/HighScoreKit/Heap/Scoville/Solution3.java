@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Solution3 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Èü > ´õ ¸Ê°Ô
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í™ > ë” ë§µê²Œ
 	 * https://programmers.co.kr/learn/courses/30/lessons/42626
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ¿ì¼±¼øÀ§Å¥¸¦ »ç¿ëÇØ¼­ Á¤·Ä¿¡ ÇÊ¿äÇÑ ½Ã°£À» ÁÙ¿´´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ìš°ì„ ìˆœìœ„íë¥¼ ì‚¬ìš©í•´ì„œ ì •ë ¬ì— í•„ìš”í•œ ì‹œê°„ì„ ì¤„ì˜€ë‹¤.
 	 */	
 	public int solution(int[] scoville, int K) {
 		PriorityQueue<Integer> scovilleQueue = new PriorityQueue<>();
@@ -15,11 +15,11 @@ public class Solution3 {
 		}
 		
 		int mixedCount = 0;
-    	while (scovilleQueue.peek() <= K) { // Ã¹ ¹øÂ° À½½ÄÀÌ K ½ºÄÚºô ÀÌ»óÀÌ¸é ¸ğµç À½½ÄÀÌ K ½ºÄÚºô ÀÌ»óÀÌ´Ù.
-            if (scovilleQueue.size() == 1) { // ¸ğµç À½½ÄÀÌ K ½ºÄÚºôÀ» ³ÑÁö ¸ø ÇÏ¿´´Ù.
+    	while (scovilleQueue.peek() <= K) { // ì²« ë²ˆì§¸ ìŒì‹ì´ K ìŠ¤ì½”ë¹Œ ì´ìƒì´ë©´ ëª¨ë“  ìŒì‹ì´ K ìŠ¤ì½”ë¹Œ ì´ìƒì´ë‹¤.
+            if (scovilleQueue.size() == 1) { // ëª¨ë“  ìŒì‹ì´ K ìŠ¤ì½”ë¹Œì„ ë„˜ì§€ ëª» í•˜ì˜€ë‹¤.
                 return -1;
             }
-            // À½½ÄÀ» ¼¯ÀÚ
+            // ìŒì‹ì„ ì„ì
             int scovilleOne = scovilleQueue.poll();
             int scovilleTwo = scovilleQueue.poll();            
             scovilleQueue.offer(scovilleOne+(scovilleTwo*2));

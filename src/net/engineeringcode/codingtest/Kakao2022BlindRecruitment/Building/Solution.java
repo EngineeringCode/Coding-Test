@@ -2,18 +2,18 @@ package net.engineeringcode.codingtest.Kakao2022BlindRecruitment.Building;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > 2022 Ä«Ä«¿À ºí¶óÀÎµå Ã¤¿ë > ÆÄ±«µÇÁö ¾ÊÀº °Ç¹°
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > 2022 ì¹´ì¹´ì˜¤ ë¸”ë¼ì¸ë“œ ì±„ìš© > íŒŒê´´ë˜ì§€ ì•Šì€ ê±´ë¬¼
 	 * https://programmers.co.kr/learn/courses/30/lessons/92344
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * Á¤È®¼º Å×½ºÆ®´Â Åë°úÇÏÁö¸¸ È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÏÁö ¸ø ÇÑ´Ù. O(N+M+K) ÀÌ±â ¶§¹®
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì •í™•ì„± í…ŒìŠ¤íŠ¸ëŠ” í†µê³¼í•˜ì§€ë§Œ íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•˜ì§€ ëª» í•œë‹¤. O(N+M+K) ì´ê¸° ë•Œë¬¸
 	 */
     
     public int solution(int[][] board, int[][] skill) {
     	
-    	// ½ºÅ³À» ¼ø¼­´ë·Î ½ÇÇàÇÑ´Ù.
+    	// ìŠ¤í‚¬ì„ ìˆœì„œëŒ€ë¡œ ì‹¤í–‰í•œë‹¤.
     	for(int[] action:skill) {
-    		int type = 1; // ¹æ¾î(Ä¡·á)
-    		if(action[0]==1){ // °ø°İ
+    		int type = 1; // ë°©ì–´(ì¹˜ë£Œ)
+    		if(action[0]==1){ // ê³µê²©
     			type = -1;
     		}
     		int r1 = action[1];
@@ -31,7 +31,7 @@ public class Solution {
     	
     	int answer = 0;
     	
-    	// ¾È ºÎ¼­Áø °Ç¹°ÀÇ ¼ö¸¦ ¼¾´Ù.
+    	// ì•ˆ ë¶€ì„œì§„ ê±´ë¬¼ì˜ ìˆ˜ë¥¼ ì„¼ë‹¤.
 		for(int i=0;i<board.length;i++) {
 			for(int j=0;j<board[0].length;j++) {
 				if(board[i][j] > 0) {

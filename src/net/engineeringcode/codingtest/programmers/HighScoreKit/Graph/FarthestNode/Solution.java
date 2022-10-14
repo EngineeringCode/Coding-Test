@@ -3,32 +3,32 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ±×·¡ÇÁ > °¡Àå ¸Õ ³ëµå
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ê·¸ë˜í”„ > ê°€ì¥ ë¨¼ ë…¸ë“œ
 	 * https://programmers.co.kr/learn/courses/30/lessons/49189
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ·çÆ® ³ëµå¿¡¼­ °¡Àå ¸Õ ³ëµåÀÇ °³¼ö¸¦ ±¸ÇÏ´Â °ÍÀº BFS°¡ ÀûÀıÇÏ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë£¨íŠ¸ ë…¸ë“œì—ì„œ ê°€ì¥ ë¨¼ ë…¸ë“œì˜ ê°œìˆ˜ë¥¼ êµ¬í•˜ëŠ” ê²ƒì€ BFSê°€ ì ì ˆí•˜ë‹¤.
 	 */
 	
 	public int solution(int n, int[][] edge) {
         int answer = 0;
         ArrayList<ArrayList<Integer>> edgeList = new ArrayList<>();
         boolean visited[] = new boolean[n+1];
-        // ¸®½ºÆ® ÃÊ±âÈ­
+        // ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         for(int i=0; i<=n; i++) {
         	edgeList.add(new ArrayList<>());
         }
-        // edgeList¿¡ edge Á¤º¸¸¦ ÀÔ·Â
+        // edgeListì— edge ì •ë³´ë¥¼ ì…ë ¥
         for(int i=0; i<edge.length; i++) {
         	edgeList.get(edge[i][0]).add(edge[i][1]);
         	edgeList.get(edge[i][1]).add(edge[i][0]);
         }
-        // queue¿¡´Â ÇöÀç depthÀÇ ³ëµå ¸ñ·ÏÀ» ´ã´Â´Ù.
+        // queueì—ëŠ” í˜„ì¬ depthì˜ ë…¸ë“œ ëª©ë¡ì„ ë‹´ëŠ”ë‹¤.
         Queue<Integer> queue = new LinkedList<>();
-        queue.offer(1); // Å½»öÀ» ½ÃÀÛÇÒ ³ëµå¸¦ 1¹ø ³ëµå·Î ÇÑ´Ù.
-        visited[1] = true; // Å½»öÀ» ½ÃÀÛÇÒ ³ëµå¸¦ ¹æ¹®Ã³¸®ÇÑ´Ù.
+        queue.offer(1); // íƒìƒ‰ì„ ì‹œì‘í•  ë…¸ë“œë¥¼ 1ë²ˆ ë…¸ë“œë¡œ í•œë‹¤.
+        visited[1] = true; // íƒìƒ‰ì„ ì‹œì‘í•  ë…¸ë“œë¥¼ ë°©ë¬¸ì²˜ë¦¬í•œë‹¤.
         
-        int queueSize = 0; // ÇöÀç depthÀÇ ³ëµåÀÇ °³¼ö
-        int currentNode; // Å½»ö ÁßÀÎ ³ëµå
+        int queueSize = 0; // í˜„ì¬ depthì˜ ë…¸ë“œì˜ ê°œìˆ˜
+        int currentNode; // íƒìƒ‰ ì¤‘ì¸ ë…¸ë“œ
         
         while(!queue.isEmpty()){
         	queueSize= queue.size();

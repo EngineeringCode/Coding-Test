@@ -3,19 +3,19 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Èü > µð½ºÅ© ÄÁÆ®·Ñ·¯
+	 * í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > íž™ > ë””ìŠ¤í¬ ì»¨íŠ¸ë¡¤ëŸ¬
 	 * https://programmers.co.kr/learn/courses/30/lessons/42626
-	 * ÀÛ¼ºÀÚ: °øÇÐÄÚµå(engineeringcode93@gmail.com)
-	 * ¿î¿µÃ¼Á¦ °ú¸ñÀ» ¹è¿ì¸é ³ª¿À´Â µð½ºÅ© ½ºÄÉÁÙ¸µ °³³äÀÌ °£´ÜÇÏ°Ô È°¿ëµÈ ¹®Á¦ÀÌ´Ù.
-	 * ÁÖ¾îÁø ¿äÃ»À» Ã³¸®ÇÒ ¶§ °¢ ¿äÃ»ÀÇ Ã³¸® ½Ã°£ÀÌ Æò±ÕÀûÀ¸·Î °¡Àå ³·À» ¼ö ÀÖ´Â ½ºÄÉÁÙ¸µÀ» ±¸ÇöÇÏ°í Æò±Õ Ã³¸® ½Ã°£À» °è»êÇÏ´Â ¹®Á¦ÀÌ´Ù.
-	 * ¿äÃ»À» Á¤·ÄÇÏ±â À§ÇÑ ¼Ò¿ä½Ã°£À» ÁÙÀÌ±â À§ÇØ ¹è¿­°ú ¿ì¼±¼øÀ§Å¥¸¦ Àß »ç¿ëÇÏ´Â °ÍÀÌ Áß¿äÇÏ´Ù.
+	 * ìž‘ì„±ìž: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ìš´ì˜ì²´ì œ ê³¼ëª©ì„ ë°°ìš°ë©´ ë‚˜ì˜¤ëŠ” ë””ìŠ¤í¬ ìŠ¤ì¼€ì¤„ë§ ê°œë…ì´ ê°„ë‹¨í•˜ê²Œ í™œìš©ëœ ë¬¸ì œì´ë‹¤.
+	 * ì£¼ì–´ì§„ ìš”ì²­ì„ ì²˜ë¦¬í•  ë•Œ ê° ìš”ì²­ì˜ ì²˜ë¦¬ ì‹œê°„ì´ í‰ê· ì ìœ¼ë¡œ ê°€ìž¥ ë‚®ì„ ìˆ˜ ìžˆëŠ” ìŠ¤ì¼€ì¤„ë§ì„ êµ¬í˜„í•˜ê³  í‰ê·  ì²˜ë¦¬ ì‹œê°„ì„ ê³„ì‚°í•˜ëŠ” ë¬¸ì œì´ë‹¤.
+	 * ìš”ì²­ì„ ì •ë ¬í•˜ê¸° ìœ„í•œ ì†Œìš”ì‹œê°„ì„ ì¤„ì´ê¸° ìœ„í•´ ë°°ì—´ê³¼ ìš°ì„ ìˆœìœ„íë¥¼ ìž˜ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ì¤‘ìš”í•˜ë‹¤.
 	 */
 	
 	public int solution(int[][] jobs) {
 		int currentTime = 0;
 		int totalIndivisualWorkTime = 0;
 		
-		// ÁÖ¾îÁø Ã³¸® ¿äÃ»À» Ã³¸® ½ÃÁ¡ ±âÁØÀ¸·Î ¿À¸§Â÷¼ø Á¤·Ä
+		// ì£¼ì–´ì§„ ì²˜ë¦¬ ìš”ì²­ì„ ì²˜ë¦¬ ì‹œì  ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 		LinkedList<int[]> jobList = new LinkedList<>();		
 		for(int[] job:jobs) {
 			jobList.add(job);
@@ -32,11 +32,11 @@ public class Solution {
 		System.out.println();
 		*/
 		
-		// ¿ì¼±¼øÀ§Å¥·Î Ã³¸®´ë±â ÁßÀÎ ¿äÃ»À» ¼Ò¿ä½Ã°£À» ±âÁØÀ¸·Î ¿À¸§Â÷¼ø Á¤·Ä
+		// ìš°ì„ ìˆœìœ„íë¡œ ì²˜ë¦¬ëŒ€ê¸° ì¤‘ì¸ ìš”ì²­ì„ ì†Œìš”ì‹œê°„ì„ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 		PriorityQueue<int[]> jobQueue = new PriorityQueue<>((o1, o2) -> o1[1]-o2[1]);
 		
 		while( !jobList.isEmpty() || !jobQueue.isEmpty() ) {	
-			// ÇöÀç ½ÃÁ¡¿¡ Ã³¸®´ë±â »óÅÂ·Î ¿ì¼±¼øÀ§Å¥¿¡ µé¾î°¥ ¼ö ÀÖ´Â ¿äÃ»À» Áý¾î ³ÖÀ½
+			// í˜„ìž¬ ì‹œì ì— ì²˜ë¦¬ëŒ€ê¸° ìƒíƒœë¡œ ìš°ì„ ìˆœìœ„íì— ë“¤ì–´ê°ˆ ìˆ˜ ìžˆëŠ” ìš”ì²­ì„ ì§‘ì–´ ë„£ìŒ
 			while(!jobList.isEmpty() && jobList.peek()[0] <= currentTime) {
 				int[] job = jobList.poll();
 				jobQueue.offer(job);
@@ -47,12 +47,12 @@ public class Solution {
 			System.out.println();
 			*/
 			
-			// Ã³¸®´ë±â ÁßÀÎ ¿äÃ»ÀÌ ¾ø´Ù¸é ³²¾Æ ÀÖ´Â ¿äÃ»ÀÌ ¿ä±¸ÇÑ ½ÃÁ¡À¸·Î ¹Ù·Î ³Ñ¾î°¨
+			// ì²˜ë¦¬ëŒ€ê¸° ì¤‘ì¸ ìš”ì²­ì´ ì—†ë‹¤ë©´ ë‚¨ì•„ ìžˆëŠ” ìš”ì²­ì´ ìš”êµ¬í•œ ì‹œì ìœ¼ë¡œ ë°”ë¡œ ë„˜ì–´ê°
 			if(jobQueue.isEmpty()) {
 				currentTime = jobList.peek()[0];
 				continue;
 			}
-			// Ã³¸®´ë±â ÁßÀÎ ¿äÃ»ÀÌ ÀÖ´Ù¸é Ã³¸®
+			// ì²˜ë¦¬ëŒ€ê¸° ì¤‘ì¸ ìš”ì²­ì´ ìžˆë‹¤ë©´ ì²˜ë¦¬
 			if(!jobQueue.isEmpty()) {
 				int[] job = jobQueue.poll();
 				currentTime += job[1];
@@ -60,7 +60,7 @@ public class Solution {
 			}
 		}
 		
-		// Ã³¸® ¿ä±¸»çÇ×¿¡ ¼Ò¼öÁ¡Àº ¹ö¸®´Â °ÍÀÌ ÀÖÀ½. ÀÚ¹Ù¿¡¼­´Â ±âº»ÀûÀ¸·Î Á¤¼öÇüÀº ¼Ò¼öÁ¡À» ¹ö¸®±â¿¡ »ç¿ëÇÏÁö ¾ÊÀ½.
+		// ì²˜ë¦¬ ìš”êµ¬ì‚¬í•­ì— ì†Œìˆ˜ì ì€ ë²„ë¦¬ëŠ” ê²ƒì´ ìžˆìŒ. ìžë°”ì—ì„œëŠ” ê¸°ë³¸ì ìœ¼ë¡œ ì •ìˆ˜í˜•ì€ ì†Œìˆ˜ì ì„ ë²„ë¦¬ê¸°ì— ì‚¬ìš©í•˜ì§€ ì•ŠìŒ.
 		//return (int) Math.floor(totalIndivisualWorkTime/jobs.length);
 		return totalIndivisualWorkTime/jobs.length;		
     }
@@ -83,7 +83,7 @@ public class Solution {
 			System.out.println("CASE 1 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		jobs = new int[][]{{0, 3}, {0, 9}, {0, 6}};
     	answerCorrect = 10;
 		answerReturned = -1;
@@ -99,7 +99,7 @@ public class Solution {
 			System.out.println("CASE 2 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		jobs = new int[][]{{0, 1}, {6, 1}};
     	answerCorrect = 1;
 		answerReturned = -1;
@@ -115,7 +115,7 @@ public class Solution {
 			System.out.println("CASE 3 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		jobs = new int[][]{{0, 8}, {3, 5}, {3, 3}}; // 8, 11-3 8, 16-3 13
     	answerCorrect = 9;
 		answerReturned = -1;
@@ -131,7 +131,7 @@ public class Solution {
 			System.out.println("CASE 4 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		jobs = new int[][]{{1, 1}, {0, 7}};
     	answerCorrect = 7;
 		answerReturned = -1;

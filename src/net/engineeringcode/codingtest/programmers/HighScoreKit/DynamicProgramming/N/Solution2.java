@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution2 {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > µ¿Àû°èÈ¹¹ı(Dynamic Programming) > NÀ¸·Î Ç¥Çö
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ë™ì ê³„íšë²•(Dynamic Programming) > Nìœ¼ë¡œ í‘œí˜„
 	 * https://programmers.co.kr/learn/courses/30/lessons/42895
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÇØ¼³: https://gurumee92.tistory.com/164
-	 * '±¸¸£¹Ì'´ÔÀÌ ÀÛ¼ºÇÏ½Å ÇØ¼³À» Âü°íÇß½À´Ï´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * í•´ì„¤: https://gurumee92.tistory.com/164
+	 * 'êµ¬ë¥´ë¯¸'ë‹˜ì´ ì‘ì„±í•˜ì‹  í•´ì„¤ì„ ì°¸ê³ í–ˆìŠµë‹ˆë‹¤.
 	 */
 	
     public int solution(int N, int number) {    	

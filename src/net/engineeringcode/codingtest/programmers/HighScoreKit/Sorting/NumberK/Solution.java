@@ -3,25 +3,25 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Á¤·Ä > K¹øÂ°¼ö
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > ì •ë ¬ > Kë²ˆì§¸ìˆ˜
 	 * https://programmers.co.kr/learn/courses/30/lessons/42748
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ¹è¿­À» Á¶°Ç¿¡ µû¶ó ÀÚ¸£°í ¿À¸§Â÷¼ø Á¤·ÄÇÑ ÈÄ ¸î¹øÂ° Á¤¼ö °ªÀ» Ã£´Â ¹®Á¦ÀÌ´Ù.
-	 * ¹è¿­À» ´Ù·ç°í ±âº»ÀûÀÎ Á¤·ÄÀ» ÇÒ ¼ö ÀÖ´À³Ä¸¦ ¹¯´Â ¹®Á¦ÀÌ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ë°°ì—´ì„ ì¡°ê±´ì— ë”°ë¼ ìë¥´ê³  ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•œ í›„ ëª‡ë²ˆì§¸ ì •ìˆ˜ ê°’ì„ ì°¾ëŠ” ë¬¸ì œì´ë‹¤.
+	 * ë°°ì—´ì„ ë‹¤ë£¨ê³  ê¸°ë³¸ì ì¸ ì •ë ¬ì„ í•  ìˆ˜ ìˆëŠëƒë¥¼ ë¬»ëŠ” ë¬¸ì œì´ë‹¤.
 	 */
 	
 	public int[] solution(int[] array, int[][] commands) {
     	int[] answer = new int[commands.length];
 
         for(int n=0; n<commands.length; n++){
-        	// Á¶°Ç(¸í·É)À» ÀÌÇØÇÏ±â ÆíÇÏ°Ô °¡°øÇÑ´Ù.
+        	// ì¡°ê±´(ëª…ë ¹)ì„ ì´í•´í•˜ê¸° í¸í•˜ê²Œ ê°€ê³µí•œë‹¤.
             int[] command = commands[n];
             int i = command[0];
             int j = command[1];
             int k = command[2];
 
-            int[] parsedAnswer = Arrays.copyOfRange(array, i-1, j); // ¹è¿­À» Á¶°Ç¿¡ µû¶ó ÀÚ¸¥´Ù(º¹»çÇÑ´Ù).
-            Arrays.sort(parsedAnswer); // ¿À¸§Â÷¼ø Á¤·ÄÇÑ´Ù.
+            int[] parsedAnswer = Arrays.copyOfRange(array, i-1, j); // ë°°ì—´ì„ ì¡°ê±´ì— ë”°ë¼ ìë¥¸ë‹¤(ë³µì‚¬í•œë‹¤).
+            Arrays.sort(parsedAnswer); // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•œë‹¤.
     
             answer[n] = parsedAnswer[k-1];
         }

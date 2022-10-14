@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > Èü > ´õ ¸Ê°Ô
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í™ > ë” ë§µê²Œ
 	 * https://programmers.co.kr/learn/courses/30/lessons/42626
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * Àç±ÍÇÔ¼ö·Î À½½ÄÀ» ¼¯¾î°¡´Â °ÍÀ» ±¸ÇöÇÏ¿´´Âµ¥ Á¤È®¼º Å×½ºÆ®´Â Åë°úÇÏ¿´À¸³ª È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÏÁö ¸ø ÇÑ´Ù.
-	 * È¿À²¼º Å×½ºÆ®¸¦ Åë°úÇÑ °ÍÀº Solution3¿¡ ÀÖ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * ì¬ê·€í•¨ìˆ˜ë¡œ ìŒì‹ì„ ì„ì–´ê°€ëŠ” ê²ƒì„ êµ¬í˜„í•˜ì˜€ëŠ”ë° ì •í™•ì„± í…ŒìŠ¤íŠ¸ëŠ” í†µê³¼í•˜ì˜€ìœ¼ë‚˜ íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•˜ì§€ ëª» í•œë‹¤.
+	 * íš¨ìœ¨ì„± í…ŒìŠ¤íŠ¸ë¥¼ í†µê³¼í•œ ê²ƒì€ Solution3ì— ìˆë‹¤.
 	 */
 	
 	public int solution(int[] scoville, int K) {
@@ -15,19 +15,19 @@ public class Solution {
     }
     
     int cook(int[] scoville, int K, int mixedCount){
-    	// ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÑ´Ù.
+    	// ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•œë‹¤.
         Arrays.sort(scoville);        
         //System.out.println(Arrays.toString(scoville));
 
-        if(isOkay(scoville, K)){ // ¸ğµç À½½ÄÀÌ K ½ºÄÚºô ÀÌ»óÀÎ°¡?
+        if(isOkay(scoville, K)){ // ëª¨ë“  ìŒì‹ì´ K ìŠ¤ì½”ë¹Œ ì´ìƒì¸ê°€?
             return mixedCount;
         }
         
-        if(scoville.length == 1){ // ¸ğµç À½½ÄÀÌ K ½ºÄÚºôÀ» ³ÑÁö ¸ø ÇÏ¿´´Â°¡?
+        if(scoville.length == 1){ // ëª¨ë“  ìŒì‹ì´ K ìŠ¤ì½”ë¹Œì„ ë„˜ì§€ ëª» í•˜ì˜€ëŠ”ê°€?
             return -1;
         }
         
-        // À½½ÄÀ» ¼¯¾îº¸ÀÚ
+        // ìŒì‹ì„ ì„ì–´ë³´ì
         int[] newScoville = new int[scoville.length-1];
         for(int i=1; i<scoville.length; i++){
             if(i==1){

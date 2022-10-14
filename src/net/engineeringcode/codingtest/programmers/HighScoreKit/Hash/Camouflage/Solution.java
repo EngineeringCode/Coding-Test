@@ -3,14 +3,14 @@ import java.util.*;
 
 public class Solution {
 	/*
-	 * ÇÁ·Î±×·¡¸Ó½º > ÄÚµùÅ×½ºÆ® ¿¬½À > ÇØ½Ã > À§Àå
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ > ì½”ë”©í…ŒìŠ¤íŠ¸ ì—°ìŠµ > í•´ì‹œ > ìœ„ì¥
 	 * https://programmers.co.kr/learn/courses/30/lessons/42578
-	 * ÀÛ¼ºÀÚ: °øÇĞÄÚµå(engineeringcode93@gmail.com)
-	 * ÇÑ °³ ÀÌ»óÀÇ ¿ÊÀ» ÀÔ¾î¾ß ÇÏ°í °°Àº ºĞ·ùÀÇ ¿ÊÀº ÃÖ´ë ÇÑ °³¸¸ ÀÔÀ» ¼ö ÀÖ´Â °æ¿ì ÀÔÀ» ¼ö ÀÖ´Â ¿ÊÀÇ °æ¿ìÀÇ ¼ö¸¦ ±¸ÇÏ´Â ¹®Á¦ÀÌ´Ù.
+	 * ì‘ì„±ì: ê³µí•™ì½”ë“œ(engineeringcode93@gmail.com)
+	 * í•œ ê°œ ì´ìƒì˜ ì˜·ì„ ì…ì–´ì•¼ í•˜ê³  ê°™ì€ ë¶„ë¥˜ì˜ ì˜·ì€ ìµœëŒ€ í•œ ê°œë§Œ ì…ì„ ìˆ˜ ìˆëŠ” ê²½ìš° ì…ì„ ìˆ˜ ìˆëŠ” ì˜·ì˜ ê²½ìš°ì˜ ìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë¬¸ì œì´ë‹¤.
 	 */
 	
 	public int solution(String[][] clothes) {		
-		// ºĞ·ùº°·Î ¿ÊÀÇ °¹¼ö¸¦ ÀúÀåÇÑ´Ù.
+		// ë¶„ë¥˜ë³„ë¡œ ì˜·ì˜ ê°¯ìˆ˜ë¥¼ ì €ì¥í•œë‹¤.
 		HashMap<String, Integer> clotheList = new HashMap<>();		
 		for(String[] clothe:clothes) {
 			String categroy = clothe[1];
@@ -23,14 +23,14 @@ public class Solution {
 			}
 		}
 		
-		// ¿ÊÀ» ÀÔ´Â ÀüÃ¼ Á¶ÇÕÀÇ ¼ö¸¦ ±¸ÇÑ´Ù.
+		// ì˜·ì„ ì…ëŠ” ì „ì²´ ì¡°í•©ì˜ ìˆ˜ë¥¼ êµ¬í•œë‹¤.
         int answer = 1;        
         for(String category:clotheList.keySet()) {
         	int clotheCount = clotheList.get(category);
         	answer *= combination(clotheCount+1, 1);
         }       
         
-        // ¾Æ¹«°Íµµ ÀÔÁö ¾Ê´Â ¼ö°¡ ÇÏ³ª ÀÖÀ¸¹Ç·Î »«´Ù.
+        // ì•„ë¬´ê²ƒë„ ì…ì§€ ì•ŠëŠ” ìˆ˜ê°€ í•˜ë‚˜ ìˆìœ¼ë¯€ë¡œ ëº€ë‹¤.
         return answer-1;
     }
 	
@@ -75,7 +75,7 @@ public class Solution {
 			System.out.println("CASE 2 FAIL");
 		}	
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		clothes = new String[][] {{"crow_mask", "face"}, {"yellow_hat", "headgear"}};
     	answerCorrect =  3;
 		answerReturned = -1;		
@@ -91,7 +91,7 @@ public class Solution {
 			System.out.println("CASE 3 FAIL");
 		}
 		
-		// ³»°¡ Ãß°¡ÇÑ Å×½ºÆ® ÄÉÀÌ½º
+		// ë‚´ê°€ ì¶”ê°€í•œ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		clothes = new String[][] {{"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"blue_hat", "headgear"}, {"yellow_hat", "headgear"}};
     	answerCorrect = 8;
 		answerReturned = -1;		
