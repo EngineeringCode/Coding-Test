@@ -1,6 +1,13 @@
 package net.acmicpc.codingtest.Problem23291;
 import java.util.*;
-// 런타임 에러 (ArrayIndexOutOfBounds) 발생
+
+/*
+ * Baekjoon Online Judge > Problem > 20057 > 마법사 상어와 토네이도
+ * 문제주소: https://www.acmicpc.net/problem/20057
+ * 작성자: 공학코드(engineeringcode93@gmail.com)
+ * 
+ * 런타임 에러 (ArrayIndexOutOfBounds) 발생
+ */
 public class Main{	
 	static int N;
 	static int K;
