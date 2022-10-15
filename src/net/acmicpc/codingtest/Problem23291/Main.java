@@ -1,14 +1,14 @@
 package net.acmicpc.codingtest.Problem23291;
 import java.util.*;
-
+// 런타임 에러 (ArrayIndexOutOfBounds) 발생
 public class Main{	
-	static int N = 0;
-	static int K = 0;
-	static int numberOfTimes = 0;
-	static LinkedList<int[]> map = new LinkedList<>();
+	static int N;
+	static int K;
+	static int numberOfTimes;
+	static LinkedList<int[]> map;
 	
-	static int[] dy = { 0, 1, 0, -1 };
-	static int[] dx = { 1, 0, -1, 0 };
+	static final int[] dy = { 0, 1, 0, -1 };
+	static final int[] dx = { 1, 0, -1, 0 };
 	
 	public static void main(String args[]) throws Exception
 	{
@@ -16,8 +16,10 @@ public class Main{
 		
 		N = sc.nextInt();
 		K = sc.nextInt();
+		numberOfTimes = 0;
+		map = new LinkedList<>();
 		
-		for(int x=0;x<N;x++) {
+		for(int x=0; x<N; x++) {
 			map.add(new int[N]);
 			map.get(x)[0] = sc.nextInt();
 		}
@@ -44,7 +46,7 @@ public class Main{
 		
 		minimumFishCount = seachMinimumFishCount();
 		
-		for(int i=0; i<N; i++) {
+		for(int i=0; i<map.size(); i++) {
 			if(map.get(i)[0] == minimumFishCount) {
 				map.get(i)[0]++;
 			}
@@ -162,7 +164,7 @@ public class Main{
 		
 		map = (LinkedList<int[]>) tempMap.clone();
 	}
-	static boolean isFinsihed() {
+	static boolean isFinsihed() {		
 		int max = seachMaximumFishCount();
 		int min = seachMinimumFishCount();
 		if( (max - min) <= K) {
@@ -172,19 +174,15 @@ public class Main{
 	}
 	static int seachMinimumFishCount(){
 		int minimumFishCount = 10000;
-		for(int i=0; i<N; i++) {
-			if(map.get(i)[0] < minimumFishCount) {
-				minimumFishCount = map.get(i)[0];
-			}
+		for(int i=0; i<map.size(); i++) {
+			minimumFishCount = Math.min(map.get(i)[0], minimumFishCount);
 		}
 		return minimumFishCount;
 	}
 	static int seachMaximumFishCount(){
 		int maximumFishCount = -1;
-		for(int i=0; i<N; i++) {
-			if(map.get(i)[0] > maximumFishCount) {
-				maximumFishCount = map.get(i)[0];
-			}
+		for(int i=0; i<map.size(); i++) {
+			maximumFishCount = Math.max(map.get(i)[0], maximumFishCount);
 		}
 		return maximumFishCount;
 	}
