@@ -1,14 +1,7 @@
 package net.acmicpc.codingtest.Problem23291;
 import java.util.*;
 
-public class Main{
-	/*
-	 * Baekjoon Online Judge > Problem > 23291 > 어항 정리
-	 * 문제주소: https://www.acmicpc.net/problem/23291
-	 * 작성자: 공학코드(engineeringcode93@gmail.com)
-	 * 
-	 */
-	
+public class Main{	
 	static int N = 0;
 	static int K = 0;
 	static int numberOfTimes = 0;
@@ -20,10 +13,6 @@ public class Main{
 	public static void main(String args[]) throws Exception
 	{
 		Scanner sc = new Scanner(System.in);
-		/*
-		Scanner sc = new Scanner("8 7\r\n" + 
-				"5 2 3 14 9 2 11 8");
-		*/
 		
 		N = sc.nextInt();
 		K = sc.nextInt();
@@ -37,44 +26,14 @@ public class Main{
 	}
 	
 	static int simulation() {
-		//printArray();
-		
-		/* 8. 물고기가 가장 많이 들어있는 어항과 가장 적게 들어있는 어항의 물고기 수 차이가 K개 이하이면 종료하고 아니면 1~8번 반복 */
 		for(numberOfTimes=0; !isFinsihed(); numberOfTimes++) {
-			/* 1. 물고기가 가장 적게 들어있는 어항에 물고기 한 마리 추가하기  */
-			//System.out.println("Step1:");
 			addOneFishMinimumBowl();
-			//printArray();
-			/* 2. 어항 90도씩 돌리면서 쌓기 */
-			//System.out.println("Step2:");
 			moveFirst();
-			//printArray();
-			/* 3. 물고기 수 조절하기 */
-			//System.out.println("Step3:");
 			moveFish();
-			//printArray();
-			/* 4. 바닥에 일렬로 놓기 */
-			//System.out.println("Step4:");
 			lineUp();
-			//printArray();
-			/* 5. N/2 씩 180도씩 돌리면서 쌓기 */
-			//System.out.println("Step5:");
 			moveSecond();
-			//printArray();
-			/* 6. 바닥에 일렬로 놓기 */
-			//System.out.println("Step6:");
 			lineUp();
-			//printArray();
-			/* 7. 물고기 수 조절하기 */
-			//System.out.println("Step7:");
 			moveFish();
-			//printArray();
-			
-			/*
-			Scanner sc = new Scanner(System.in);
-			System.out.print("Type something to continue:");
-			sc.next();
-			*/
 		}
 		
 		return numberOfTimes;
@@ -95,7 +54,6 @@ public class Main{
 	static void moveFirst() {
 		map.get(1)[1] = map.get(0)[0]; 
 		map.remove(0);
-		//printArray();
 		
 		for(;;) {
 			if(isFinalMoveFist()) {
@@ -104,7 +62,6 @@ public class Main{
 			
 			int searchWidth = getSearchWidth(map);
 			int searchHeight = getSearchHeight(map, 0);
-			//System.out.printf("(%d,%d)\r\n", searchWidth, searchHeight);
 			
 			int offsetY = searchWidth+1;
 			
@@ -113,14 +70,12 @@ public class Main{
 					int targetX = searchWidth+1+y;
 					int targetY = offsetY;
 					map.get(targetX)[targetY] = map.get(x)[y]; 
-					//System.out.printf("(%d,%d)->(%d,%d) \r\n", x, y, targetX, targetY);
 				}
 				offsetY--;
 			}
 			for(int x=0; x<=searchWidth; x++) {
 				map.poll();
 			}
-			//printArray();
 		}
 	}
 	static int getSearchWidth(LinkedList<int[]> map) {
@@ -155,7 +110,6 @@ public class Main{
 			int searchWidth = map.size()/2;
 			int searchHeight = getSearchHeight(map, 0);
 			
-			//System.out.printf("(%d,%d)\r\n", searchWidth, searchHeight);
 			for(int x=0; x<searchWidth; x++) {
 				int offsetY = searchHeight+1;
 				for(int y=0; y<=searchHeight; y++) {
@@ -167,8 +121,6 @@ public class Main{
 			for(int x=0; x<searchWidth; x++) {
 				map.poll();
 			}
-			//printArray();
-			//System.out.println();
 		}
 	}
 	static void lineUp() {
@@ -183,12 +135,6 @@ public class Main{
 		}
 		map = (LinkedList<int[]>) tempMap.clone();
 	}
-	/*
-	 *	물고기 수를 조절하는 메서드인데 설명만으로 구현하기가 모호하다. 
-	 *	아래의 문서를 참고해서 코딩을 하면 문제에서 제시한 예제와 다른 값이 나오며 특정 케이스에서 실패한다.
-	 *  
-	 *  참고문서: https://kau-algorithm.tistory.com/585
-	 */
 	static void moveFish() {
 		LinkedList<int[]> tempMap = (LinkedList<int[]>) map.clone();	
 
@@ -220,7 +166,6 @@ public class Main{
 		int max = seachMaximumFishCount();
 		int min = seachMinimumFishCount();
 		if( (max - min) <= K) {
-			//System.out.println("max:"+max+" min:"+min);
 			return true;
 		}
 		return false;
@@ -242,13 +187,5 @@ public class Main{
 			}
 		}
 		return maximumFishCount;
-	}
-	static void printArray() {
-		for(int x=0;x<map.size();x++) {
-			for(int y=0;y<map.get(x).length;y++) {
-				System.out.printf("%5d ", map.get(x)[y]);
-			}
-			System.out.println();
-		}
 	}
 }
