@@ -7,8 +7,6 @@ public class Solution1{
 	 * 문제주소: https://www.acmicpc.net/problem/23291
 	 * 작성자: 공학코드(engineeringcode93@gmail.com)
 	 * 
-	 * 참고 테스트 케이스
-	 * https://www.acmicpc.net/board/view/101778
 	 */
 	
 	static int N;
@@ -23,9 +21,13 @@ public class Solution1{
 	{
 		//Scanner sc = new Scanner(System.in);
 		
-		/* CASE 1 */
-		Scanner sc = new Scanner("4 0\r\n" + 
-				"1 10000 1 10000");
+		/* 
+		 * 참고 테스트 케이스 목록
+		 * 
+		 * https://www.acmicpc.net/board/view/101778
+		 */
+		Scanner sc = new Scanner("7 0\r\n" + 
+				"5111 1100 5 7 10000 9 9999");
 		
 		N = sc.nextInt();
 		K = sc.nextInt();
@@ -89,7 +91,7 @@ public class Solution1{
 		
 		minimumFishCount = seachMinimumFishCount();
 		
-		for(int i=0; i<N; i++) {
+		for(int i=0; i<map.size(); i++) {
 			if(map.get(i)[0] == minimumFishCount) {
 				map.get(i)[0]++;
 			}
@@ -190,9 +192,11 @@ public class Solution1{
 	}
 	/*
 	 *	물고기 수를 조절하는 메서드인데 설명만으로 구현하기가 모호하다. 
-	 *	아래의 문서를 참고해서 코딩을 하면 문제에서 제시한 예제와 다른 값이 나오며 특정 케이스에서 실패한다.
+	 *	현재 특정 케이스에서 실패한다.
 	 *  
-	 *  참고문서: https://kau-algorithm.tistory.com/585
+	 *  참고문서
+	 *  https://kau-algorithm.tistory.com/585
+	 *  https://jangcenter.tistory.com/94
 	 */
 	static void moveFish() {
 		LinkedList<int[]> tempMap = (LinkedList<int[]>) map.clone();	
@@ -206,14 +210,13 @@ public class Solution1{
 					int ny = y + dy[d];
 					if (
 							(nx < 0 || ny < 0 || nx >= map.size() || ny >= map.get(0).length) 
-							|| map.get(nx)[ny] >= map.get(x)[y]
 							|| map.get(nx)[ny] == 0 
 						)
 						continue;
 					int diff = (map.get(x)[y] - map.get(nx)[ny]) / 5;
 					if (diff > 0) {
-						tempMap.get(nx)[ny] += diff;
 						tempMap.get(x)[y] -= diff;
+						tempMap.get(nx)[ny] += diff;
 					}
 				}
 			}
