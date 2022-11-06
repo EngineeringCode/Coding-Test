@@ -1,4 +1,4 @@
-package net.acmicpc.codingtest.Problem20057;
+package net.engineeringcode.codingtest.acmicpc.Problem20057;
 import java.util.*;
 
 public class Main{

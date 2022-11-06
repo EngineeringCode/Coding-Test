@@ -1,4 +1,4 @@
-package net.acmicpc.codingtest.Problem23291;
+package net.engineeringcode.codingtest.acmicpc.Problem23291;
 import java.util.*;
 
 public class Solution1{
