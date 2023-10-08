@@ -6,7 +6,7 @@ public class Solution1{
 	 * Baekjoon Online Judge > Problem > 23291 > 어항 정리
 	 * 문제주소: https://www.acmicpc.net/problem/23291
 	 * 작성자: 공학코드(engineeringcode93@gmail.com)
-	 * 
+	 * 런타임 에러(ArrayIndexOutOfBounds)가 발생한 실패한 해답이다.
 	 */
 	
 	static int N;
