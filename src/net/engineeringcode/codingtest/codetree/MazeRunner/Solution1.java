@@ -6,6 +6,7 @@ import java.util.*;
  * 문제주소: https://codetree.ai/training-field/frequent-problems/problems/maze-runner/
  * 작성자: 공학코드(engineeringcode93@gmail.com)
  * 참고문서: https://colorscripter.com/s/OOPBE7p
+ *        https://www.youtube.com/watch?v=y_O79inM9C4
  * 
  * 회전하는 부분이 모든 것에 영향을 주기 때문에 배열에 모든 것을 표현하는 방법을 잘 구성하는 것이 중요하다.
  *  
